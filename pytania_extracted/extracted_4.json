@@ -1,0 +1,545 @@
+{
+  "metadata": {
+    "subject": "Elektronika",
+    "course": "Podstawy Elektroniki — AGH",
+    "source_dir": "quiz/pytania/zestaw_eng/",
+    "output_dir": "quiz/pytania_extracted/",
+    "extracted_at": "2024-06-29",
+    "schema_version": "1.0",
+    "language": "pl",
+    "original_language": "en",
+    "total_questions": 21,
+    "notes": [
+      "Pytania przetłumaczone z angielskiego na polski.",
+      "Niektóre zdjęcia zawierają po 2 pytania.",
+      "Zdjęcie 441558264 (pytanie 9a/9b) było nieczytelne — wymagana ręczna weryfikacja."
+    ]
+  },
+  "questions": [
+
+    {
+      "id": 1,
+      "source_file": "quiz/pytania/zestaw_eng/441425805_479781017792873_4471789055945943176_n.jpg",
+      "type": "numeric",
+      "topic": "Dioda krzemowa i Zenera — prąd w obwodzie szeregowym",
+      "question": "Oblicz prąd płynący w obwodzie jeśli: E = 14 V, D - dioda krzemowa, D_Z - krzemowa dioda stabilizacyjna Zenera o napięciu 5.6 V i R = 8 kΩ. Podaj wynik w [mA] bez jednostki, z dokładnością do dwóch miejsc po przecinku.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/441425805_479781017792873_4471789055945943176_n.jpg",
+          "alt": "Obwód szeregowy: E=14V → D (dioda krzemowa, U_p=0.7V) → D_Z (Zenera, U_DZ=5.6V, spolaryzowana zaporowo) → R=8kΩ → GND."
+        },
+        "description": "Szeregowo: E, D (przewodzi 0.7V), D_Z (Zenera 5.6V w zaporze), R=8kΩ. KVL: I=(14−0.7−5.6)/8000.",
+        "components": ["E = 14 V", "D (dioda Si, U_p=0.7V)", "D_Z (Zenera, U_DZ=5.6V)", "R = 8 kΩ"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 0.9625,
+        "unit": "mA",
+        "tolerance": 0.005,
+        "confirmed": true,
+        "confirmation_note": "Obliczenia na zdjęciu: I=(14−0.7−5.6)/8000=7.7/8000=0.9625 mA. Widoczne pole z odpowiedzią."
+      },
+      "hint": "I = (E − U_D − U_DZ) / R = (14 − 0.7 − 5.6) / 8000 = 7.7 / 8000 = 0.9625 mA."
+    },
+
+    {
+      "id": 2,
+      "source_file": "quiz/pytania/zestaw_eng/441441918_1136745917616952_5017856665319308603_n.jpg",
+      "type": "single_choice",
+      "topic": "Tranzystor bipolarny — stan pracy w układzie",
+      "question": "W przedstawionym obwodzie: E₁ = -5 V, E₂ = 10 V, R_C = 1 kΩ, R_E = 10 kΩ, β = 100. Jaki jest stan pracy tranzystora?",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/441441918_1136745917616952_5017856665319308603_n.jpg",
+          "alt": "Tranzystor NPN: R_C w kolektorze do góry, R_E po prawej. Dwa źródła napięcia E₁=-5V (po lewej, strzałka →) i E₂=10V (po prawej, strzałka →) sterują bazą i emiterem."
+        },
+        "description": "E₁ polaryzuje złącze baza-emiter, E₂ i R_E tworzą obwód emitera.",
+        "components": ["E₁ = -5 V", "E₂ = 10 V", "R_C = 1 kΩ", "R_E = 10 kΩ", "NPN BJT", "β = 100"]
+      },
+      "choices": [
+        { "id": "A", "text": "aktywny odwrotny (active inverse)" },
+        { "id": "B", "text": "nie można określić (it cannot be determined)" },
+        { "id": "C", "text": "odcięcie (cut-off)" },
+        { "id": "D", "text": "nasycenie (saturation)" },
+        { "id": "E", "text": "aktywny normalny (active normal)" }
+      ],
+      "answer": {
+        "value": "E",
+        "unit": null, "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Na zdjęciu zaznaczone E (active normal) z symbolem X — BŁĘDNE wg systemu. Merytorycznie: E₁=-5V na bazie, E₂=10V. Analiza wymaga ustalenia V_BE i V_CE. Możliwe że poprawna odpowiedź to D (nasycenie) lub C (odcięcie)."
+      },
+      "hint": "Sprawdź V_BE: jeśli E₁ polaryzuje bazę ujemnie względem emitera (NPN), złącze BE może być zaporowe → odcięcie. Lub sprawdź czy tranzystor wchodzi w nasycenie przy danych wartościach."
+    },
+
+    {
+      "id": 3,
+      "source_file": "quiz/pytania/zestaw_eng/441451136_484082167483555_5830404273942869053_n.jpg",
+      "type": "single_choice",
+      "topic": "Tranzystor bipolarny — stan pracy (nasycenie vs aktywny)",
+      "question": "Jaki jest stan pracy tranzystora w przedstawionym układzie, jeżeli napięcie złącza spolaryzowanego przewodząco wynosi 0.7 V, U_CC = +5 V, β = 100, R_C = 100 kΩ, R_B = 43 kΩ?",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/441451136_484082167483555_5830404273942869053_n.jpg",
+          "alt": "Wzmacniacz CE NPN: U_CC zasilanie, R_C w kolektorze, R_B od bazy do U_CC. Source do masy."
+        },
+        "description": "Klasyczny wzmacniacz CE. I_B=(U_CC-0.7)/R_B. Obliczenia: I_B=10⁻⁴A, I_C=β·I_B=10⁻²A. U_C=I_C·R_C=10⁻²·10⁵=10³V >> U_CC → stan nasycenia.",
+        "components": ["NPN BJT (β=100)", "U_CC = 5 V", "R_C = 100 kΩ", "R_B = 43 kΩ"]
+      },
+      "choices": [
+        { "id": "A", "text": "aktywny normalny" },
+        { "id": "B", "text": "nasycenie" },
+        { "id": "C", "text": "odcięcie" },
+        { "id": "D", "text": "aktywny odwrotny" }
+      ],
+      "answer": {
+        "value": "B",
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Obliczenia na zdjęciu: I_B=(5-0.7)/43kΩ=10⁻⁴A. I_C=100·I_B=10⁻²A. U_C=I_C·R_C=10⁻²·10⁵=1000V > U_CC → niemożliwe w trybie aktywnym → nasycenie. Opis na zdjęciu: 'stan nasycenia'."
+      },
+      "hint": "Jeśli obliczony I_C·R_C > U_CC, tranzystor nie może pracować w trybie aktywnym → wchodzi w nasycenie. Zasada: U_RC + U_CE = U_CC musi być spełnione."
+    },
+
+    {
+      "id": 4,
+      "source_file": "quiz/pytania/zestaw_eng/441453217_349608628157165_1912902159438846367_n.jpg",
+      "type": "multi_choice",
+      "topic": "Pojemność złączowa diody krzemowej — zależności",
+      "question": "Pojemność złączowa diody krzemowej półprzewodnikowej zależy od:",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "wartości napięcia polaryzującego diodę" },
+        { "id": "B", "text": "czasu życia nośników większościowych" },
+        { "id": "C", "text": "koncentracji domieszek obszarów p i n złącza" },
+        { "id": "D", "text": "rezystancji dynamicznej diody" },
+        { "id": "E", "text": "wartości płynącego prądu" }
+      ],
+      "answer": {
+        "value": ["A", "C"],
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Potwierdzone: 'Twoja odpowiedź jest poprawna.' Zaznaczone A i C z zielonym ✓."
+      },
+      "hint": "C_j = ε·A/W_dep. W_dep zależy od napięcia polaryzacji (A ✓) i koncentracji domieszek (C ✓). Czas życia nośników → pojemność dyfuzyjna (nie złączowa). Rezystancja dynamiczna i prąd → nie wpływają na C_j bezpośrednio."
+    },
+
+    {
+      "id": 5,
+      "source_file": "quiz/pytania/zestaw_eng/441453217_349608628157165_1912902159438846367_n.jpg",
+      "type": "single_choice",
+      "topic": "Rzeczywisty N-MOSFET wzbogacany — nasycenie (EN)",
+      "question": "Które zdanie jest prawdziwe dla rzeczywistego tranzystora N-MOSFET wzbogacanego pracującego w obszarze nasycenia?",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "im wyższe napięcie V_DS, tym wyższy prąd I_D" },
+        { "id": "B", "text": "wartość transkonduktancji g_m jest wprost proporcjonalna do wartości prądu I_D" },
+        { "id": "C", "text": "im wyższe napięcie V_DS, tym niższy prąd I_D" },
+        { "id": "D", "text": "im wyższy prąd I_D, tym niższa wartość transkonduktancji g_m" },
+        { "id": "E", "text": "im wyższy prąd I_D, tym wyższa wartość transkonduktancji g_m" }
+      ],
+      "answer": {
+        "value": ["A", "E"],
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Na zdjęciu: A zaznaczone z ✓, B zaznaczone z X (błędne), E zaznaczone z ✓. Odpowiedź A i E poprawne."
+      },
+      "hint": "Rzeczywisty MOSFET: modulacja długości kanału → I_D rośnie nieznacznie z V_DS (A ✓). g_m = √(2K·I_D) → rośnie z I_D (E ✓). B: g_m ∝ √I_D, nie I_D wprost (B ✗)."
+    },
+
+    {
+      "id": 6,
+      "source_file": "quiz/pytania/zestaw_eng/441458829_1190484672127087_7262289200191127546_n.jpg",
+      "type": "multi_choice",
+      "topic": "Rezystancja szeregowa diody — zależności (EN)",
+      "question": "Rezystancja szeregowa diody półprzewodnikowej zależy od:",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "prądu płynącego przez diodę" },
+        { "id": "B", "text": "przekroju poprzecznego obszarów p i n" },
+        { "id": "C", "text": "długości obszarów p i n" },
+        { "id": "D", "text": "koncentracji domieszek w materiałach p i n" },
+        { "id": "E", "text": "pojemności złączowej" }
+      ],
+      "answer": {
+        "value": ["B", "C", "D"],
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Na zdjęciu zaznaczone B, C, D z zielonym ✓. Odpowiedź poprawna (brak komunikatu o błędzie)."
+      },
+      "hint": "r_s = ρ·L/A, gdzie ρ=1/(q·μ·N). Zależy od: długości L (C ✓), przekroju A (B ✓), koncentracji N (D ✓). Prąd ani pojemność nie wpływają na r_s."
+    },
+
+    {
+      "id": 7,
+      "source_file": "quiz/pytania/zestaw_eng/441503651_771181905204590_2088537366752912573_n.jpg",
+      "type": "multi_choice",
+      "topic": "JFET z kanałem n — zależność prądu drenu (EN)",
+      "question": "W tranzystorze złączowym (JFET) z kanałem typu n prąd drenu:",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "zależy od pierwiastka z napięcia V_DS w zakresie liniowym" },
+        { "id": "B", "text": "zależy od kwadratu napięcia U_DS w zakresie nasycenia" },
+        { "id": "C", "text": "zależy od pierwiastka z napięcia V_GS w zakresie liniowym" },
+        { "id": "D", "text": "jest wprost proporcjonalny do napięcia V_GS w liniowym zakresie pracy" },
+        { "id": "E", "text": "zależy od kwadratu napięcia V_GS w zakresie nasycenia" }
+      ],
+      "answer": {
+        "value": ["E"],
+        "unit": null, "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Na zdjęciu zaznaczone C i E. C oznaczone X (błędne), E bez oznaczenia błędu. Komunikat: 'Twoja odpowiedź jest niepoprawna.' Merytorycznie E jest poprawne (I_D ∝ (V_GS−V_P)² w nasyceniu). C, D — błędne. Prawdopodobnie poprawna jest tylko E."
+      },
+      "hint": "JFET nasycenie: I_D = I_DSS·(1−V_GS/V_P)² — kwadrat V_GS (E ✓). Zakres liniowy: I_D liniowo od V_DS (nie pierwiastek). B — fałsz (I_D nie zależy od kwadratu V_DS w nasyceniu)."
+    },
+
+    {
+      "id": 8,
+      "source_file": "quiz/pytania/zestaw_eng/441503651_771181905204590_2088537366752912573_n.jpg",
+      "type": "numeric",
+      "topic": "Minimalna wartość rezystora R — obwód z dwiema diodami Zenera",
+      "question": "Jaka powinna być minimalna wartość rezystora R wyrażona w [Ω] w przedstawionym obwodzie, tak aby w zakresie napięcia wejściowego U_WE = (−10 V do +10 V) prąd płynący przez rezystor nie przekraczał wartości I_max = 1 A? Napięcia przebicia diod Zenera: U_DZ1 = 2.3 V, U_DZ2 = 5.3 V (charakterystyki diod Zenera pokazane obok obwodu).",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/441503651_771181905204590_2088537366752912573_n.jpg",
+          "alt": "Obwód: U_WE → R → węzeł → D_Z1 (Zenera 2.3V) i D_Z2 (dioda Si 0.7V) w serii do masy. U_WY mierzone na parze D_Z1+D_Z2."
+        },
+        "description": "D_Z1 i D_Z2 połączone szeregowo między węzłem a masą. Przy U_WE=+10V: U_max = U_DZ2 + U_D = 5.3+0.7=6V lub U_DZ1+U_DZ2. Obliczenia: U=10−2.3−0.7=7V, R=U/I=7/1=7Ω.",
+        "components": ["R (szukane)", "D_Z1 (Zenera, U_DZ1=2.3V)", "D_Z2 (Zenera, U_DZ2=5.3V, lub dioda Si 0.7V)", "U_WE = ±10V", "I_max = 1 A"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 7,
+        "unit": "Ω",
+        "tolerance": 0,
+        "confirmed": true,
+        "confirmation_note": "Obliczenia na zdjęciu: U=10−2.3−0.7=7V. R=U/I=7/1=7Ω."
+      },
+      "hint": "Przy U_WE=+10V maksymalny prąd. Napięcie na R: U_R=10−U_DZ1−U_D=10−2.3−0.7=7V. R_min = U_R/I_max = 7/1 = 7Ω."
+    },
+
+    {
+      "id": 9,
+      "source_file": "quiz/pytania/zestaw_eng/441508136_1121330639089376_2475416215853974845_n.jpg",
+      "type": "multi_choice",
+      "topic": "Tranzystor bipolarny — stany pracy złączy (EN)",
+      "question": "Zaznacz zdania prawdziwe dotyczące tranzystora bipolarnego:",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "W nasyceniu złącze kolektora jest spolaryzowane zaporowo, a złącze emitera przewodząco." },
+        { "id": "B", "text": "W stanie odcięcia oba złącza są spolaryzowane zaporowo." },
+        { "id": "C", "text": "W aktywnym odwrotnym złącze emitera jest spolaryzowane przewodząco, a kolektora zaporowo." },
+        { "id": "D", "text": "W aktywnym normalnym złącze emitera jest spolaryzowane przewodząco, a kolektora zaporowo." },
+        { "id": "E", "text": "W nasyceniu złącze kolektora jest spolaryzowane przewodząco, a złącze emitera zaporowo." }
+      ],
+      "answer": {
+        "value": ["B", "D"],
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Na zdjęciu: B zaznaczone z ✓, D zaznaczone z ✓. Komunikat: 'Twoja odpowiedź jest poprawna.'"
+      },
+      "hint": "Stany BJT: Aktywny normalny: BE=przewodząco, BC=zaporowo (D ✓). Odcięcie: oba złącza zaporowo (B ✓). Nasycenie: oba przewodząco (A i E fałsz). Aktywny odwrotny: BE=zaporowo, BC=przewodząco (C fałsz)."
+    },
+
+    {
+      "id": 10,
+      "source_file": "quiz/pytania/zestaw_eng/441508136_1121330639089376_2475416215853974845_n.jpg",
+      "type": "multi_choice",
+      "topic": "Rezystor jako element elektroniczny (EN)",
+      "question": "Rezystor jest elementem:",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "którego rzeczywista rezystancja mieści się w zakresie R_nominalna ± tolerancja" },
+        { "id": "B", "text": "którego rzeczywista rezystancja nie zmienia się wraz ze zmianami temperatury" },
+        { "id": "C", "text": "dwuzaciskowym, pasywnym, rozpraszającym energię" },
+        { "id": "D", "text": "którego rezystancja jest odwrotnie proporcjonalna do płynącego przez niego prądu" },
+        { "id": "E", "text": "który można opisać liniową charakterystyką prądowo-napięciową" }
+      ],
+      "answer": {
+        "value": ["A", "C", "E"],
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Na zdjęciu: A, C, E zaznaczone z ✓. Komunikat: 'Twoja odpowiedź jest poprawna.'"
+      },
+      "hint": "Rezystor: dwuzaciskowy, pasywny, rozpraszający energię (C ✓). Opisany prawem Ohma — liniowa char. U-I (E ✓). Rzeczywista wartość = R_nom ± tolerancja (A ✓). Rezystancja zależy od temperatury (B ✗). R = U/I = const, nie 1/I (D ✗)."
+    },
+
+    {
+      "id": 11,
+      "source_file": "quiz/pytania/zestaw_eng/441534172_993172388860256_1763174326366064652_n.jpg",
+      "type": "matching",
+      "topic": "Różniczkujący układ RC — relacja okresu i stałej czasowej",
+      "question": "Wybierz poprawną zależność między okresem a stałą czasową dla przebiegów wyjściowych w różniczkującym układzie RC.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/441534172_993172388860256_1763174326366064652_n.jpg",
+          "alt": "Trzy pary przebiegów U_WE i U_WY z różnymi relacjami T i τ. Każda para ma przypisany warunek."
+        },
+        "description": "Układ różniczkujący RC. Trzy przypadki: (1) τ>>T — wyjście prawie prostokątne. (2) T>>τ — wyjście z krótkimi impulsami. (3) τ≈T — pośredni kształt.",
+        "components": []
+      },
+      "choices": null,
+      "answer": {
+        "value": {
+          "przebieg_1": "τ >> T",
+          "przebieg_2": "T >> τ",
+          "przebieg_3": "τ ≈ T"
+        },
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Na zdjęciu wszystkie trzy przyporządkowania zaznaczone z ✓. Odpowiedź poprawna."
+      },
+      "hint": "Różniczkujący RC (C szeregowo, R do masy): τ>>T → słabe różniczkowanie, U_WY≈U_WE (prawie prostokąt). T>>τ → dobre różniczkowanie, krótkie impulsy na zboczach. τ≈T → pośredni."
+    },
+
+    {
+      "id": 12,
+      "source_file": "quiz/pytania/zestaw_eng/441558264_7835789326443969_3435253792549730010_n.jpg",
+      "type": "multi_choice",
+      "topic": "Metoda Bridgmana — zastosowanie (EN) + JFET wzmocnienie",
+      "question": "⚠️ NIECZYTELNE ZDJĘCIE — wymaga ręcznej weryfikacji. Zdjęcie zawiera dwa pytania: (a) metoda BRIDGAM stosowana jest do: [opcje a-e widoczne fragmentarycznie] oraz (b) pytanie o wzmocnienie napięciowe układu JFET z elementami zewnętrznymi (R_G, g_m, g_ds, R_D).",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/441558264_7835789326443969_3435253792549730010_n.jpg",
+          "alt": "Nieczytelne — zdjęcie zbyt małe. Widoczny schemat małosygnałowy JFET z obliczeniami."
+        },
+        "description": "Zdjęcie za małe do pełnego odczytu. Fragmentarycznie widoczne: pytanie o Bridgmana (odpowiedź e: 'Forming single crystals from polycrystals' = formowanie monokryształów z polikryształów). Oraz pytanie o JFET z obliczeniami.",
+        "components": []
+      },
+      "choices": null,
+      "answer": {
+        "value": null,
+        "unit": null, "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Zdjęcie nieczytelne. Fragmentarycznie: (a) Bridgman → odpowiedź e (formowanie monokryształów z polikryształów). (b) JFET wzmocnienie — obliczenia nieczytelne. Wymaga ręcznego uzupełnienia."
+      },
+      "hint": "Metoda Bridgmana: formowanie monokryształów z polikryształów (ta sama odpowiedź co w innych zestawach)."
+    },
+
+    {
+      "id": 13,
+      "source_file": "quiz/pytania/zestaw_eng/441623564_470473422055547_3602416614160218703_n.jpg",
+      "type": "numeric",
+      "topic": "Waristor — prąd w obwodzie nieliniowym (U_ZAS=4V, R=3Ω)",
+      "question": "W przedstawionym obwodzie z warystorem R_VAR, U_ZAS = 4 V, R = 3 Ω, a charakterystyka prądowo-napięciowa warystora wyraża się wzorem U = I². Jaka jest wartość prądu I wyrażonego w [A] płynącego w tym obwodzie?",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/441623564_470473422055547_3602416614160218703_n.jpg",
+          "alt": "Obwód szeregowy: U_ZAS=4V → R=3Ω → R_VAR (U=I²) → GND."
+        },
+        "description": "KVL: 4 = 3I + I². Równanie: I²+3I−4=0. Rozwiązanie: (I+4)(I−1)=0.",
+        "components": ["U_ZAS = 4 V", "R = 3 Ω", "R_VAR (U=I²)"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 1,
+        "unit": "A",
+        "tolerance": 0,
+        "confirmed": true,
+        "confirmation_note": "Obliczenia na zdjęciu: I²+3I−4=0 → (I+4)(I−1)=0 → I=1A (pierwiastek dodatni)."
+      },
+      "hint": "KVL: 4 = 3I + I² → I²+3I−4=0 → (I+4)(I−1)=0 → I=1 A."
+    },
+
+    {
+      "id": 14,
+      "source_file": "quiz/pytania/zestaw_eng/441693504_1506210306599533_6289351105145623482_n.jpg",
+      "type": "numeric",
+      "topic": "Dioda Zenera — prąd w obwodzie (E=8V, U_DZ=4.5V, R=3kΩ)",
+      "question": "Oblicz prąd płynący w obwodzie jeśli: E = 8 V, D_Z - krzemowa dioda stabilizacyjna Zenera o napięciu 4.5 V i R = 3 kΩ. Podaj wynik w [mA] bez jednostki, z dokładnością do dwóch miejsc po przecinku.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/441693504_1506210306599533_6289351105145623482_n.jpg",
+          "alt": "Obwód szeregowy: E=8V → R=3kΩ → D_Z (Zenera 4.5V, spolaryzowana zaporowo) → GND."
+        },
+        "description": "I=(E−U_DZ)/R=(8−4.5)/3000=3.5/3000≈1.17mA.",
+        "components": ["E = 8 V", "R = 3 kΩ", "D_Z (Zenera, U_DZ=4.5V)"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 1.17,
+        "unit": "mA",
+        "tolerance": 0.005,
+        "confirmed": true,
+        "confirmation_note": "Obliczenia na zdjęciu: I=(8−4.5)/3000=3.5/3000≈1.17mA."
+      },
+      "hint": "I = (E − U_DZ) / R = (8 − 4.5) / 3000 = 3.5 / 3000 ≈ 1.17 mA."
+    },
+
+    {
+      "id": 15,
+      "source_file": "quiz/pytania/zestaw_eng/441762893_997042305407676_8275460404443119095_n.jpg",
+      "type": "multi_choice",
+      "topic": "Złącze krzemowe — wpływ wzrostu temperatury (EN)",
+      "question": "Wraz ze wzrostem temperatury złącza krzemowego:",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "napięcie przewodowe zmniejsza się o 2 mV/K przy stałym prądzie przez złącze" },
+        { "id": "B", "text": "wartość bezwzględna napięcia przebicia Zenera maleje" },
+        { "id": "C", "text": "prąd wsteczny podwaja się co 10 K" },
+        { "id": "D", "text": "napięcie przebicia lawinowego nie zmienia się" },
+        { "id": "E", "text": "napięcie na złączu nie zmienia się dopóki przewodzi stały prąd przewodowy" }
+      ],
+      "answer": {
+        "value": ["A", "B", "C"],
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Na zdjęciu A, B, C zaznaczone z ✓. Komunikat: 'Twoja odpowiedź jest poprawna.'"
+      },
+      "hint": "Wraz z T: U_D maleje ~2mV/K (A ✓). Prąd wsteczny I₀ rośnie wykładniczo, podwaja się co ~10K (C ✓). Zenera (<5V): U_przebicia maleje z T (B ✓). Lawina: rośnie z T (D ✗). E ✗."
+    },
+
+    {
+      "id": 16,
+      "source_file": "quiz/pytania/zestaw_eng/441762893_997042305407676_8275460404443119095_n.jpg",
+      "type": "numeric",
+      "topic": "Złącze p-n — stosunek szerokości obszarów zubożonych (N_A=10¹², N_D=10¹⁰)",
+      "question": "Jeżeli w złączu p-n koncentracja domieszki akceptorowej wynosi 10¹² atomów/cm³, a koncentracja domieszki donorowej wynosi 10¹⁰ atomów/cm³, to stosunek szerokości obszaru zubożonego w materiale typu n do szerokości obszaru zubożonego w materiale typu p wynosi:",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": null,
+      "answer": {
+        "value": 100,
+        "unit": null,
+        "tolerance": 0,
+        "confirmed": true,
+        "confirmation_note": "Odpowiedź 100 w polu z ✓. Obliczenia: x_n/x_p = N_A/N_D = 10¹²/10¹⁰ = 100."
+      },
+      "hint": "Warunek neutralności: N_A·x_p = N_D·x_n → x_n/x_p = N_A/N_D = 10¹²/10¹⁰ = 100."
+    },
+
+    {
+      "id": 17,
+      "source_file": "quiz/pytania/zestaw_eng/441901008_430676446449304_355968200937685789_n.jpg",
+      "type": "numeric",
+      "topic": "Układ RC — odpowiedź skokowa Vout(0), Vout(∞), τ (EN)",
+      "question": "Do przedstawionego układu doprowadzono w chwili t=0 skok napięcia U_IN=1V. R1=2kΩ, R2=R3=1kΩ, C2=1μF. Jakie będą wartości V_OUT(0), V_OUT(∞) i stała czasowa τ?",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/441901008_430676446449304_355968200937685789_n.jpg",
+          "alt": "Układ RC: R1=2kΩ szeregowo, potem R2=1kΩ równolegle z kondensatorem C (R3=1kΩ jako obciążenie). U_WE=1V, U_WY na R3."
+        },
+        "description": "t=0: C zwarte. t=∞: C otwarte. Obliczenia: Vout(0)=R3/(R2+R3)·(1·1k)/(... Vout(∞)=(R2+R3)/(R1+R2+R3)·Vin=2/4=1/2V. τ=C·R_eq.",
+        "components": ["R1 = 2 kΩ", "R2 = 1 kΩ", "R3 = 1 kΩ", "C2 = 1 μF"]
+      },
+      "choices": null,
+      "answer": {
+        "value": {
+          "Vout_0": "1/3 V",
+          "Vout_inf": "1/2 V",
+          "tau": "7.5·10⁻⁴ s"
+        },
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Obliczenia na zdjęciu: Vout(0)=R3/(R3+R1‖R2)·1=1k/(1k+2k‖1k)=1/(1+2/3)=3/5... Ostateczne: Vout(0)=1/3V, Vout(∞)=1/2V. τ=C·R_eq=10⁻⁶·3/4=7.5·10⁻⁴s. Wynik potwierdzony (1/1 pkt)."
+      },
+      "hint": "t=∞ (C otwarte): Vout(∞)=(R2+R3)/(R1+R2+R3)·Vin=(1+1)/(2+1+1)=1/2V. t=0 (C zwarte, R2 zwarte przez C): Vout(0)=R3/(R1+R3)·... τ=C·(R_th widziana przez C)."
+    },
+
+    {
+      "id": 18,
+      "source_file": "quiz/pytania/zestaw_eng/448310339_1036770758096546_1330209994454633392_n.jpg",
+      "type": "numeric",
+      "topic": "Wzmocnienie prądowe tranzystora bipolarnego z wykresu",
+      "question": "Oblicz wzmocnienie prądowe tranzystora bipolarnego pracującego w punkcie P na rysunku. Podaj część całkowitą wyniku.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/448310339_1036770758096546_1330209994454633392_n.jpg",
+          "alt": "Rodzina charakterystyk wyjściowych I_C(U_CE) przy różnych I_B (5, 10, 15, 20, 25, 30, 35, 40, 45 μA). Punkt P leży na krzywej I_B=15μA przy I_C≈3mA."
+        },
+        "description": "Z wykresu: punkt P na I_B=15μA i I_C=3mA. β=I_C/I_B=3mA/15μA=200.",
+        "components": []
+      },
+      "choices": null,
+      "answer": {
+        "value": 200,
+        "unit": null,
+        "tolerance": 0,
+        "confirmed": true,
+        "confirmation_note": "Odpowiedź 200 w polu z ✓. Obliczenia: I_B=15μA, I_C=3mA, β=3·10⁻³/15·10⁻⁶=200."
+      },
+      "hint": "β = I_C/I_B. Z wykresu: punkt P: I_B=15μA, I_C=3mA → β=200."
+    },
+
+    {
+      "id": 19,
+      "source_file": "quiz/pytania/zestaw_eng/448457295_371924755480455_5533669003827258500_n.jpg",
+      "type": "multi_choice",
+      "topic": "Tyrystor, triak, dynistor — właściwości (EN)",
+      "question": "Wybierz zdania prawdziwe spośród następujących:",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "Tyrystor jest czterozłączowym elementem półprzewodnikowym." },
+        { "id": "B", "text": "Charakterystyka prądowo-napięciowa triaka jest symetryczna." },
+        { "id": "C", "text": "Tyrystor jest elementem, którego nie można używać w obwodach prądu przemiennego." },
+        { "id": "D", "text": "Dynistor ma ujemną rezystancję w pewnych warunkach." },
+        { "id": "E", "text": "Triak jest elementem, który załącza się impulsem prądu bramki dodatniego, a wyłącza impulsem ujemnym." }
+      ],
+      "answer": {
+        "value": ["B", "D"],
+        "unit": null, "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Zaznaczone B, D, E. Komunikat: 'Twoja odpowiedź jest częściowo poprawna. Wybrałeś zbyt wiele opcji.' B ✓, D ✓, E ✗ (triak wyłącza się przez przejście prądu przez zero, nie impulsem ujemnym). Poprawne: B i D."
+      },
+      "hint": "Tyrystor: czterowarstwowy (p-n-p-n), trójzłączowy (A fałsz). Triak: symetryczna char. (B ✓). Tyrystor można użyć w AC (C fałsz). Dynistor: ujemna r_d w przebiciach (D ✓). Triak wyłącza się przez przejście przez zero prądu (E fałsz)."
+    },
+
+    {
+      "id": 20,
+      "source_file": "quiz/pytania/zestaw_eng/448457295_371924755480455_5533669003827258500_n.jpg",
+      "type": "single_choice",
+      "topic": "Porównanie diod — wyższa rezystancja szeregowa",
+      "question": "Jeżeli dwie diody półprzewodnikowe D1 i D2 wykonane z krzemu mają te same wymiary geometryczne, ale dioda D1 ma wyższą rezystancję szeregową niż dioda D2, to można powiedzieć, że:",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "pojemność złączowa diody D1 jest większa niż diody D2" },
+        { "id": "B", "text": "materiały półprzewodnikowe, z których wykonana jest dioda D2, są silniej domieszkowane niż w diodzie D1" },
+        { "id": "C", "text": "napięcie przebicia diody D2 jest wyższe niż diody D1" },
+        { "id": "D", "text": "obszar zubożony diody D1 jest większy niż diody D2" }
+      ],
+      "answer": {
+        "value": "B",
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Na zdjęciu B zaznaczone z ✓. Odpowiedź poprawna."
+      },
+      "hint": "r_s = ρ·L/A. Przy tych samych wymiarach geometrycznych: D1 ma wyższe ρ → niższe N. D2 ma niższe ρ → wyższe N (silniejsze domieszkowanie). B ✓. Wyższe N → wyższa C_j (A ✗ — odwrotnie). Wyższe N → niższe U_przebicia (C ✗). Wyższe N → węższa strefa zubożona (D ✗ — odwrotnie dla D1)."
+    },
+
+    {
+      "id": 21,
+      "source_file": "quiz/pytania/zestaw_eng/448457297_843290980995653_4407346013169902756_n.jpg",
+      "type": "numeric",
+      "topic": "Tranzystor bipolarny PNP — napięcie U₃",
+      "question": "Zmierzone napięcia na tranzystorze wynoszą: U₁ = 0.7 V, U₂ = 0.7 V. Jaka jest wartość U₃?",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/448457297_843290980995653_4407346013169902756_n.jpg",
+          "alt": "Symbol tranzystora PNP z oznaczonymi napięciami: U₁=0.7V (złącze emiter-baza, strzałka w dół), U₂=0.7V (złącze baza-kolektor), U₃ (napięcie emiter-kolektor, strzałka w dół)."
+        },
+        "description": "PNP w nasyceniu: U_EB=0.7V, U_CB=0.7V. U₃=U_EC=U_EB−U_CB=0.7+0.7=1.4V? Obliczenia na zdjęciu: U₃=1.4V.",
+        "components": ["PNP BJT", "U₁ = U_EB = 0.7 V", "U₂ = U_CB = 0.7 V"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 1.4,
+        "unit": "V",
+        "tolerance": 0.05,
+        "confirmed": true,
+        "confirmation_note": "Obliczenia na zdjęciu: U₃ = 1.4V. Widoczne odręczne '1.4V' przy U₃."
+      },
+      "hint": "PNP nasycenie: oba złącza przewodzą. U_EC = U_EB + U_BC = 0.7 + 0.7 = 1.4 V. (Uwaga na znaki: U₃ = U₁ + U₂ w tym układzie połączeń.)"
+    }
+
+  ]
+}

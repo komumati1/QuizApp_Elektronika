@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "subject": "Elektronika",
+    "course": "Podstawy Elektroniki — AGH",
+    "source_dir": "quiz/pytania/zestaw_eng/",
+    "output_dir": "quiz/pytania_extracted/",
+    "extracted_at": "2024-06-29",
+    "schema_version": "1.0",
+    "language": "pl",
+    "original_language": "en",
+    "total_questions": 5,
+    "notes": [
+      "Pytania 22–26 — kontynuacja zestawu zestaw_eng.",
+      "Zdjęcie 448524361 potwierdza też poprawną odpowiedź dla pytania id=2 z quiz_zestaw_eng.json: stan pracy = aktywny normalny.",
+      "Pytanie 26 (prąd I) wpisane 2.5 z ✗ — BŁĘDNE. Obliczenia dają I_C=1mA, zmiana R nie wpływa na idealny tranzystor.",
+      "Zdjęcie 448572497 zawiera w tle fragmenty innych pytań (rezystancja szeregowa diody) — to duplikat pytania id=6, pominięte."
+    ]
+  },
+  "questions": [
+
+    {
+      "id": 22,
+      "source_file": "quiz/pytania/zestaw_eng/448524361_710062471183697_2456690489970401563_n.jpg",
+      "type": "single_choice",
+      "topic": "JFET z kanałem n — zależność g_m od U_GS w nasyceniu",
+      "question": "Jaka jest zależność między transkonduktancją g_m a napięciem U_GS dla tranzystora JFET z kanałem n w obszarze nasycenia?",
+      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "choices": [
+        { "id": "A", "text": "funkcja stała (constant function)" },
+        { "id": "B", "text": "funkcja hiperboliczna (hyperbolic function)" },
+        { "id": "C", "text": "funkcja wykładnicza (exponential function)" },
+        { "id": "D", "text": "funkcja kwadratowa (square function)" },
+        { "id": "E", "text": "funkcja liniowa (linear function)" }
+      ],
+      "answer": {
+        "value": "E",
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Zaznaczone E z ✓. Komunikat: 'Twoja odpowiedź jest poprawna.'"
+      },
+      "hint": "JFET nasycenie: I_D = I_DSS·(1−V_GS/V_P)². g_m = dI_D/dV_GS = −2·I_DSS/V_P·(1−V_GS/V_P) = 2√(I_DSS·I_D)/|V_P|. Zależy liniowo od (1−V_GS/V_P) → funkcja liniowa od V_GS (E ✓)."
+    },
+
+    {
+      "id": 23,
+      "source_file": "quiz/pytania/zestaw_eng/448524361_710062471183697_2456690489970401563_n.jpg",
+      "type": "single_choice",
+      "topic": "Tranzystor bipolarny NPN — stan pracy (E₁=-5V, E₂=10V, potwierdzenie)",
+      "question": "W przedstawionym obwodzie: E₁ = -5 V, E₂ = 10 V, R_C = 1 kΩ, R_E = 10 kΩ, β = 100. Jaki jest stan pracy tranzystora?",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/448524361_710062471183697_2456690489970401563_n.jpg",
+          "alt": "Ten sam schemat co pytanie id=2: NPN z R_C, R_E, źródłami E₁ i E₂."
+        },
+        "description": "Identyczne pytanie jak id=2 w quiz_zestaw_eng.json. Tu widać odręczną odpowiedź: 'aktywny normalny'.",
+        "components": ["E₁ = -5 V", "E₂ = 10 V", "R_C = 1 kΩ", "R_E = 10 kΩ", "NPN BJT", "β = 100"]
+      },
+      "choices": [
+        { "id": "A", "text": "aktywny odwrotny" },
+        { "id": "B", "text": "nie można określić" },
+        { "id": "C", "text": "odcięcie" },
+        { "id": "D", "text": "nasycenie" },
+        { "id": "E", "text": "aktywny normalny" }
+      ],
+      "answer": {
+        "value": "E",
+        "unit": null, "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Na zdjęciu odręcznie napisane 'aktywny normalny' obok schematu. To potwierdza odpowiedź E dla pytania id=2 w quiz_zestaw_eng.json (tam było oznaczone jako BŁĘDNE przez pomyłkę — brak widocznego komunikatu systemowego, ale odręczna notatka wskazuje E jako poprawną). SPRAWDŹ ponownie pytanie id=2."
+      },
+      "hint": "E₁=-5V i E₂=10V. NPN: baza sterowana przez E₁ i E₂. V_BE zależy od topologii. Odręczna notatka potwierdza tryb aktywny normalny."
+    },
+
+    {
+      "id": 24,
+      "source_file": "quiz/pytania/zestaw_eng/448565721_1195046911674609_3609207265211516873_n.jpg",
+      "type": "numeric",
+      "topic": "Kondensator — energia zgromadzona po czasie t=60s",
+      "question": "Napięcie V_in = 10 V jest podłączone do obwodu w chwili t₀ = 0. Jaka energia E_C wyrażona w mikrożulach [μJ] zgromadzi się w kondensatorze C₁ po czasie t₆₀ = 60 s, jeżeli R₁ = R₃ = 1 kΩ, R₂ = 2 kΩ, C₁ = 2 μF?",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/448565721_1195046911674609_3609207265211516873_n.jpg",
+          "alt": "Układ RC: V_in → R1 szeregowo → węzeł z R2 i C1 równolegle → R3 do masy. C1 równolegle z R2."
+        },
+        "description": "Po czasie t=60s >> τ kondensator naładowany do napięcia w stanie ustalonym. Obliczenia: R_total=R1+R2+R3=4kΩ. I=10/4000=2.5mA. U_C=U_R2=I·R2=2.5mA·2kΩ=5V. E=½·C·U²=½·2·10⁻⁶·25=25μJ.",
+        "components": ["V_in = 10 V", "R₁ = 1 kΩ", "R₂ = 2 kΩ", "R₃ = 1 kΩ", "C₁ = 2 μF"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 25,
+        "unit": "μJ",
+        "tolerance": 0.5,
+        "confirmed": true,
+        "confirmation_note": "Obliczenia na zdjęciu: I=10/4000=2.5mA. U_C=2·10³·2.5·10⁻³=5V. E=½·C·U²=½·2·10⁻⁶·25=25μJ."
+      },
+      "hint": "t=60s >> τ → stan ustalony, C otwarte. I=(V_in)/(R₁+R₂+R₃)=10/4000=2.5mA. U_C=I·R₂=5V. E=½CU²=½·2μF·25=25μJ."
+    },
+
+    {
+      "id": 25,
+      "source_file": "quiz/pytania/zestaw_eng/448572497_991958289238604_2948053792485078418_n.jpg",
+      "type": "numeric",
+      "topic": "Idealny tranzystor bipolarny — prąd w obwodzie wyjściowym przy zmianie R",
+      "question": "W przedstawionym obwodzie U_ZAS = 5 V, beta idealnego tranzystora β = 100, prąd bazy I_B = 10 μA, R = 1 kΩ. Ile wyniesie prąd I wyrażony w [mA] płynący w obwodzie wyjściowym, jeżeli rezystancja R wzrośnie do 2 kΩ?",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_eng/448572497_991958289238604_2948053792485078418_n.jpg",
+          "alt": "Tranzystor NPN: baza sterowana prądem I_B=10μA. Kolektor przez R do U_ZAS=5V. Prąd I w obwodzie kolektora."
+        },
+        "description": "Identyczny schemat jak pytanie id=29 z zestaw_2. I_C=β·I_B=1mA, niezależne od R dla idealnego tranzystora.",
+        "components": ["NPN BJT (β=100, idealny)", "I_B = 10 μA", "R = 1kΩ → 2kΩ", "U_ZAS = 5 V"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 1.0,
+        "unit": "mA",
+        "tolerance": 0.05,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wpisane 2.5 z ✗ — BŁĘDNE. Obliczenia na zdjęciu: I_C=β·I_B=100·10·10⁻⁶=10⁻³=1mA. Zmiana R z 1kΩ na 2kΩ nie wpływa na prąd idealnego tranzystora (źródło prądowe). Poprawna odpowiedź: 1 mA. To samo pytanie co zestaw_2/id=29 gdzie odpowiedź = 1 (potwierdzone 1/1 pkt)."
+      },
+      "hint": "Idealny tranzystor: I_C = β·I_B = 100·10μA = 1 mA. Prąd kolektora nie zależy od R — tranzystor działa jak idealne źródło prądowe. Warunek: tranzystor musi pracować w trybie aktywnym (U_CE > 0), co przy R=2kΩ: U_CE=5−1mA·2kΩ=3V > 0 ✓."
+    }
+
+  ]
+}

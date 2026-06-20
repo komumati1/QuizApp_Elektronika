@@ -1,0 +1,543 @@
+{
+  "metadata": {
+    "subject": "Elektronika",
+    "course": "Podstawy Elektroniki — AGH",
+    "source_dir": "quiz/pytania/zestaw_2/",
+    "output_dir": "quiz/pytania_extracted/",
+    "extracted_at": "2024-06-29",
+    "schema_version": "1.0",
+    "total_questions": 18,
+    "notes": [
+      "Pytania z wynikiem 0/1 pkt: odpowiedź zaznaczona na zdjęciu jest BŁĘDNA. Pole answer.value zawiera najbardziej prawdopodobną poprawną odpowiedź wynikającą z analizy lub z obliczeń widocznych na zdjęciu. answer.confirmed=false dla wszystkich takich przypadków.",
+      "Pytanie 6 to zadanie drag&drop — nie da się w pełni zrekonstruować układu z obrazu. Wymaga ręcznej weryfikacji.",
+      "Pytanie 10 ma dwa zestawy checkboxów — górny to odpowiedź studenta (0 pkt), dolny prawdopodobnie to poprawne odpowiedzi pokazane przez system po zakończeniu.",
+      "Pliki z przecinkiem w nazwie (12_13.png, 15_16.png) zawierają po dwa pytania."
+    ]
+  },
+  "questions": [
+
+    {
+      "id": 1,
+      "source_file": "quiz/pytania/zestaw_2/1.png",
+      "type": "multi_choice",
+      "topic": "Rzeczywista dioda krzemowa — właściwości",
+      "question": "Dla rzeczywistej diody krzemowej D1 w przedstawionym schemacie, jeżeli E1 > 1 V i R > 1 kΩ, to prawdziwe są następujące stwierdzenia (zaznacz prawidłowe):",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/1.png",
+          "alt": "Źródło prądowe E1 (strzałka w górę) szeregowo z diodą D1 (przewodzi) i rezystorem R do masy."
+        },
+        "description": "Obwód szeregowy: E1 → D1 (przewodzi) → R → GND.",
+        "components": ["E1 > 1 V (źródło napięcia)", "D1 (dioda krzemowa rzeczywista)", "R > 1 kΩ"]
+      },
+      "choices": [
+        { "id": "A", "text": "jeżeli rośnie E1, to rośnie pojemność dyfuzyjna diody" },
+        { "id": "B", "text": "jeżeli rośnie R1, to rośnie rezystancja dynamiczna diody" },
+        { "id": "C", "text": "jeżeli rośnie R1, to rośnie rezystancja szeregowa diody" },
+        { "id": "D", "text": "jeżeli rośnie E1, to rośnie prąd dyfuzyjny diody" }
+      ],
+      "answer": {
+        "value": ["A", "D"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Na zdjęciu zaznaczone A i D (wypełnione kwadraty). Skoro wynik 0 pkt, te odpowiedzi są BŁĘDNE. Merytorycznie: gdy rośnie E1 → rośnie prąd → rośnie pojemność dyfuzyjna (A prawdziwe?) i rośnie prąd dyfuzyjny (D prawdziwe?). Możliwe że poprawne są A i D ale coś pominięto, lub że poprawne jest tylko D. Wymaga weryfikacji."
+      },
+      "hint": "Pojemność dyfuzyjna C_d = τ·I/V_T rośnie z prądem. Prąd dyfuzyjny rośnie ze wzrostem napięcia (E1). Rezystancja dynamiczna r_d = V_T/I maleje gdy rośnie prąd (rośnie E1, maleje R wpływ). Rezystancja szeregowa r_s jest stałą materiałową, nie zależy od R ani E1."
+    },
+
+    {
+      "id": 2,
+      "source_file": "quiz/pytania/zestaw_2/2.png",
+      "type": "multi_choice",
+      "topic": "Półprzewodnik samoistny — właściwości",
+      "question": "Zaznacz zdanie prawdziwe odnośnie półprzewodnika samoistnego. Wybierz wszystkie poprawne:",
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
+      "choices": [
+        { "id": "A", "text": "Poziom Fermiego znajduje się w połowie przerwy energetycznej." },
+        { "id": "B", "text": "Wraz ze wzrostem temperatury rośnie liczba nośników prądu na skutek generacji." },
+        { "id": "C", "text": "Liczba swobodnych elektronów nie zależy od temperatury." },
+        { "id": "D", "text": "Ze wzrostem temperatury poziom Fermiego przesuwa się w stronę pasma przewodnictwa." },
+        { "id": "E", "text": "W temperaturze pokojowej liczba dziur jest równa liczbie swobodnych elektronów." }
+      ],
+      "answer": {
+        "value": ["A", "B", "E"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.17/1.00 pkt. Zaznaczone A, B i E (wypełnione kwadraty). Częściowe punkty sugerują że część jest poprawna, ale nie wszystkie. Merytorycznie A, B, E są poprawne dla półprzewodnika samoistnego. Możliwe że system punktuje inaczej niż 0/1 za każdą opcję."
+      },
+      "hint": "Półprzewodnik samoistny: n = p (E), E_F ≈ środek przerwy energetycznej (A), liczba nośników rośnie z temperaturą (B). C — fałsz. D — fałsz (E_F przesuwa się minimalnie, nie w stronę pasma przewodnictwa dla samoistnego)."
+    },
+
+    {
+      "id": 3,
+      "source_file": "quiz/pytania/zestaw_2/3.png",
+      "type": "multi_choice",
+      "topic": "Tranzystor MOS z kanałem n — prąd drenu",
+      "question": "W tranzystorze MOS z kanałem n prąd drenu I_D:",
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
+      "choices": [
+        { "id": "A", "text": "w zakresie nasycenia zależy od kwadratu napięcia U_GS." },
+        { "id": "B", "text": "w zakresie liniowym zależy od pierwiastka napięcia U_DS." },
+        { "id": "C", "text": "w zakresie nasycenia jest wprost proporcjonalny do napięcia U_GS." },
+        { "id": "D", "text": "w zakresie nasycenia zależy od kwadratu napięcia U_DS." },
+        { "id": "E", "text": "w zakresie liniowym, dla małych napięć liniowo zależy od napięcia U_DS." }
+      ],
+      "answer": {
+        "value": ["A", "E"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Zaznaczone A i E (wypełnione kwadraty). Skoro 0 pkt, są BŁĘDNE. Merytorycznie A jest poprawne (I_D ∝ (U_GS−V_T)²) i E jest poprawne (zakres liniowy dla małych U_DS: I_D ≈ k·(U_GS−V_T)·U_DS). Bardzo możliwe że brakuje jeszcze jednej poprawnej opcji lub system liczy inaczej."
+      },
+      "hint": "Nasycenie: I_D = (k/2)·(V_GS−V_T)² — zależy od kwadratu V_GS (A ✓), nie od V_DS (D ✗). Zakres liniowy: I_D ≈ k·(V_GS−V_T)·V_DS dla małych V_DS (E ✓). B i C — fałsz."
+    },
+
+    {
+      "id": 4,
+      "source_file": "quiz/pytania/zestaw_2/4.png",
+      "type": "multi_choice",
+      "topic": "Małosygnałowy model tranzystora — identyfikacja schematu",
+      "question": "Schemat na rysunku może przedstawiać:",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/4.png",
+          "alt": "Dwuwrotnik z prądami i1 (X→) i i2 (→Y), napięciami u1 (X-Z) i u2 (Y-Z), źródłem prądowym i_zr i konduktancją g2 między węzłami wewnętrznymi. Zacisk wspólny Z."
+        },
+        "description": "Model małosygnałowy dwuwrotnika: wejście X-Z z prądem i1, wyjście Y-Z z prądem i2, wewnątrz źródło prądowe i_zr równolegle z konduktancją g2.",
+        "components": ["i1 (prąd wejściowy)", "i2 (prąd wyjściowy)", "u1 (napięcie wejściowe)", "u2 (napięcie wyjściowe)", "i_zr (źródło prądowe sterowane)", "g2 (konduktancja wyjściowa)"]
+      },
+      "choices": [
+        { "id": "A", "text": "małosygnałowy model tranzystora złączowego jeśli: X=S, Y=D, Z=G oraz g2=g_dg, i_zr=g_m·u_sg" },
+        { "id": "B", "text": "małosygnałowy model tranzystora MOS jeśli: X=G, Y=D, Z=S oraz g2=g_ds, i_zr=g_m·u_gs" },
+        { "id": "C", "text": "małosygnałowy model tranzystora złączowego jeśli: X=G, Y=D, Z=S oraz g2=g_ds, i_zr=g_m·i1" },
+        { "id": "D", "text": "małosygnałowy model tranzystora złączowego jeśli: X=G, Y=D, Z=S oraz g2=g_ds, i_zr=g_m·u_gs" },
+        { "id": "E", "text": "małosygnałowy model tranzystora MOS jeśli: X=S, Y=D, Z=G oraz g2=g_ds, i_zr=g_m·U_gs" }
+      ],
+      "answer": {
+        "value": ["B", "D"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Zaznaczone B i D — są BŁĘDNE. Merytorycznie: B jest poprawne dla MOSFET (X=G, Y=D, Z=S, g2=g_ds, i_zr=g_m·u_gs). D jest identyczne z B ale dla JFET — też poprawne. Możliwe że poprawna jest tylko jedna z nich, lub inne opcje. Bardzo trudne do rozstrzygnięcia bez klucza."
+      },
+      "hint": "W standardowym modelu małosygnałowym MOSFET/JFET (wspólne źródło): X=G (wejście), Y=D (wyjście), Z=S (wspólny). i_zr = g_m·u_gs. g2 = g_ds. B i D opisują ten sam układ dla odpowiednio MOS i JFET."
+    },
+
+    {
+      "id": 5,
+      "source_file": "quiz/pytania/zestaw_2/5.png",
+      "type": "numeric",
+      "topic": "Wzmacniacz z tranzystorem bipolarnym NPN — parametr h21e",
+      "question": "Do przedstawionego układu z tranzystorem bipolarnym doprowadzono do wejścia IN napięcie sinusoidalne. Wartości elementów układu wynoszą: R1 = 500 kΩ, R2 = 1 kΩ, R3 = 1 kΩ, R4 = 20 Ω. W punktach P1, P2 i P3 zmierzono oscyloskopem następujące wartości amplitud napięć sinusoidalnych: U_P1 = 200 mV, U_P2 = 100 mV, U_P3 = 500 mV. Ile wynosi parametr h21e tranzystora w wybranym punkcie pracy, wyrażony w [A/A]? Dla sygnałów zmiennych kondensatory C1 i C2 należy traktować jako reaktancje o zerowych wartościach.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/5.png",
+          "alt": "Wzmacniacz CE z NPN Q1. Wejście IN przez C1. R1=500kΩ i R2=1kΩ jako polaryzacja bazy. R3=1kΩ w kolektorze do E2. R4=20Ω w emiterze. P1 na bazie, P2 na bazie(przed R2?), P3 na kolektorze. C2 na wyjściu."
+        },
+        "description": "Wzmacniacz wspólnego emitera na Q1 NPN. Punkty pomiarowe P1 (200mV), P2 (100mV), P3 (500mV). C1 i C2 zwarte dla AC.",
+        "components": ["Q1 NPN", "R1 = 500 kΩ", "R2 = 1 kΩ", "R3 = 1 kΩ", "R4 = 20 Ω", "C1 (sprzęgający IN)", "C2 (sprzęgający OUT)", "E1, E2 (źródła)"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 2.5,
+        "unit": "A/A",
+        "tolerance": 0.1,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. W polu wpisane 0.58 (BŁĘDNE). Odręcznie na zdjęciu napisane '2.50' jako poprawna odpowiedź. Przyjmuję 2.5 ale wymaga weryfikacji. h21e = I_C / I_B = (U_P3/R3) / ((U_P1−U_P2)/R2) = (500mV/1kΩ) / (100mV/1kΩ) = 0.5/0.1 = 5? Lub inna interpretacja punktów pomiarowych."
+      },
+      "hint": "h21e = β = I_C/I_B. I_C = U_P3/R3. I_B = (U_P1−U_P2)/R2. Odczyt z odręcznych obliczeń na zdjęciu wskazuje wynik 2.50."
+    },
+
+    {
+      "id": 6,
+      "source_file": "quiz/pytania/zestaw_2/6.png",
+      "type": "matching",
+      "topic": "Model małosygnałowy hybryd-π tranzystora bipolarnego (wspólny emiter)",
+      "question": "Za pomocą myszy przeciągnij obrazki i nazwy, tak żeby powstał schemat małosygnałowy hybryd-π tranzystora bipolarnego w układzie wspólnego emitera dla małych częstotliwości.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/6.png",
+          "alt": "Zadanie drag&drop: schemat hybryd-π z elementami g_be, g_m*u_be, g_ce rozmieszczonymi między zaciskami B, C, E."
+        },
+        "description": "Model hybryd-π: B→E: konduktancja g_be. B→E: napięcie u_be. Źródło prądowe sterowane g_m*u_be między C a E. Konduktancja g_ce między C a E. Prądy i_b (do B) i i_c (do C).",
+        "components": ["g_be (konduktancja wejściowa B-E)", "u_be (napięcie B-E)", "g_m·u_be (źródło prądowe sterowane)", "g_ce (konduktancja wyjściowa C-E)", "i_b, i_c (prądy)"]
+      },
+      "choices": null,
+      "answer": {
+        "value": {
+          "description": "Poprawny schemat hybryd-π (wspólny emiter, małe częstotliwości): między B a E — konduktancja g_be równolegle z u_be. Między C a E — źródło prądowe g_m·u_be równolegle z g_ce. Prąd i_b wpływa do B, i_c wypływa z C.",
+          "elements_placed": {
+            "between_BE": ["g_be", "u_be"],
+            "between_CE": ["g_m*u_be (source: down)", "g_ce"],
+            "current_direction_ib": "into B",
+            "current_direction_ic": "into C (←)"
+          }
+        },
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.36/1.00 pkt — zadanie drag&drop, częściowe punkty. Układ widoczny na zdjęciu jest częściowo poprawny. Pełna rekonstrukcja niemożliwa tylko na podstawie zdjęcia. Na zdjęciu widać: g_be i g_m*u_be i g_ce są umieszczone w schemacie, ale niektóre elementy z dolnej listy (g_de, r_m*i_b, beta*i_b, g_eb) pozostały nieużyte."
+      },
+      "hint": "Model hybryd-π dla małych częstotliwości: wejście B-E to g_be (= 1/r_be = g_m/β). Wyjście C-E to źródło prądowe g_m·u_be || g_ce (= 1/r_ce). Nie ma elementów pojemnościowych przy małych częstotliwościach."
+    },
+
+    {
+      "id": 7,
+      "source_file": "quiz/pytania/zestaw_2/7.png",
+      "type": "multi_choice",
+      "topic": "Tranzystor JFET z kanałem n — zależność prądu drenu",
+      "question": "W tranzystorze złączowym (JFET) z kanałem typu n prąd drenu zależy:",
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
+      "choices": [
+        { "id": "A", "text": "od pierwiastka z napięcia U_DS w zakresie liniowym." },
+        { "id": "B", "text": "wprost proporcjonalnie od napięcia U_GS w liniowym zakresie pracy." },
+        { "id": "C", "text": "od kwadratu napięcia U_GS w zakresie nasycenia." },
+        { "id": "D", "text": "od kwadratu napięcia U_DS w zakresie nasycenia." },
+        { "id": "E", "text": "od pierwiastka z napięcia U_GS w zakresie liniowym." }
+      ],
+      "answer": {
+        "value": ["C", "E"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Zaznaczone C i E — są BŁĘDNE. Merytorycznie dla JFET: nasycenie I_D = I_DSS·(1−V_GS/V_P)² — zależy od kwadratu V_GS (C ✓). Zakres liniowy: I_D zależy liniowo od V_DS dla małych V_DS. A, B, D, E — fałsz. Poprawna odpowiedź to prawdopodobnie tylko C."
+      },
+      "hint": "JFET, nasycenie: I_D = I_DSS·(1 − V_GS/V_P)² — kwadrat V_GS. Zakres liniowy (małe V_DS): I_D liniowo od V_DS. Nie ma zależności od pierwiastka ani od kwadratu V_DS w nasyceniu."
+    },
+
+    {
+      "id": 8,
+      "source_file": "quiz/pytania/zestaw_2/8.png",
+      "type": "numeric",
+      "topic": "Diody Zenera szeregowo — prąd w obwodzie",
+      "question": "Oblicz prąd płynący w przedstawionym obwodzie jeśli charakterystyki diod są aproksymowane jak na rysunku obok. Wynik zapisz w [mA] z dokładnością do jednego miejsca po przecinku.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/8.png",
+          "alt": "Obwód szeregowy: E=10V → dioda Zenera DZ1 (U_DZ1=5V, przewodzi zaporowo=Zenera) → dioda Zenera DZ2 (U_DZ2=3V, przewodzi w kierunku przewodzenia=0.7V) → R=1kΩ → GND. Charakterystyka diody: U_p=0.7V."
+        },
+        "description": "E=10V. DZ1 spolaryzowana zaporowo (pracuje jako Zenera): U_DZ1=5V. DZ2 spolaryzowana przewodząco: U_p=0.7V. R=1kΩ. Obliczenia na zdjęciu: I=(10−0.7−3)/1000=6.3mA",
+        "components": ["E = 10 V", "DZ1 (Zenera, U_DZ1 = 5 V — zaporowo)", "DZ2 (Zenera, U_DZ2 = 3 V — przewodząco 0.7V)", "R = 1 kΩ"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 6.3,
+        "unit": "mA",
+        "tolerance": 0.05,
+        "confirmed": true,
+        "confirmation_note": "Wynik 1.00/1.00 pkt. Odpowiedź 6.3 widoczna w polu. Obliczenia na zdjęciu: I = (10 − 0.7 − 3) / 1000 = 6.3 mA."
+      },
+      "hint": "DZ1 zaporowo → napięcie Zenera = 5V? Ale obliczenia pokazują (10−0.7−3)/1000 = 6.3 mA, więc DZ1 przewodzi jako normalna dioda (0.7V nie wchodzi?), a DZ2 jako Zenera (3V). Weryfikuj polaryzację diod na schemacie."
+    },
+
+    {
+      "id": 9,
+      "source_file": "quiz/pytania/zestaw_2/9.png",
+      "type": "multi_choice",
+      "topic": "Przełączanie tranzystora bipolarnego — czasy przełączania",
+      "question": "Rysunek przedstawia przebiegi przełączania tranzystora bipolarnego. Zaznacz zdania prawdziwe.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/9.png",
+          "alt": "Wykresy: górny — sygnał sterujący E_g (impuls prostokątny). Dolny — U_CE(t) z oznaczeniami t1, t2, t3, t4, t5. Legenda: t1=czas opóźnienia, t3+t4=czas włączenia, t4=czas magazynowania, t4+t5=czas wyłączenia, t5=czas opadania prądu."
+        },
+        "description": "t1: opóźnienie. t2: narastanie prądu (U_CE opada). t3: stan nasycenia (U_CE nisko). t4: magazynowanie (po wyłączeniu sygnału, U_CE jeszcze nisko). t5: opadanie prądu (U_CE rośnie).",
+        "components": []
+      },
+      "choices": [
+        { "id": "A", "text": "Czas t5 to czas narastania prądu." },
+        { "id": "B", "text": "Czas t3 to czas magazynowania." },
+        { "id": "C", "text": "Czas t4+t5 to czas wyłączenia tranzystora." },
+        { "id": "D", "text": "Czas t2 to czas opadania prądu." },
+        { "id": "E", "text": "Czas t1 to czas opóźnienia." }
+      ],
+      "answer": {
+        "value": ["C", "E"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Zaznaczone B, C, E — są BŁĘDNE. Z legendy na zdjęciu: t1=opóźnienie(E ✓), t4=magazynowanie(nie B!), t4+t5=wyłączenie(C ✓), t5=opadanie prądu(nie A). B jest błędne bo t3=stan przewodzenia, nie magazynowanie. D błędne bo t2=narastanie. Poprawne: C i E."
+      },
+      "hint": "Z legendy na rysunku: t1=opóźnienie, t3+t4=czas włączenia (ale t3=przewodzenie), t4=magazynowanie, t4+t5=wyłączenie, t5=opadanie prądu. Więc: E(t1=opóźnienie ✓), C(t4+t5=wyłączenie ✓)."
+    },
+
+    {
+      "id": 10,
+      "source_file": "quiz/pytania/zestaw_2/10.png",
+      "type": "multi_choice",
+      "topic": "Złącze p-n spolaryzowane przewodząco — składowe prądu",
+      "question": "Przez idealne złącze p-n spolaryzowane przewodząco płyną prądy:",
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
+      "choices": [
+        { "id": "A", "text": "dyfuzji elektronów z obszaru p do n" },
+        { "id": "B", "text": "dyfuzji dziur z obszaru p do n" },
+        { "id": "C", "text": "dyfuzji dziur z obszaru n do p" },
+        { "id": "D", "text": "unoszenia jonów ujemnych z obszaru n do p" },
+        { "id": "E", "text": "unoszenia elektronów z obszaru p do n" }
+      ],
+      "answer": {
+        "value": ["B", "C"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Górny zestaw (odpowiedź studenta): zaznaczone B i E — BŁĘDNE. Dolny zestaw (prawdopodobnie poprawne odpowiedzi pokazane przez system): zaznaczone 'dyfuzji dziur z obszaru p do n' i 'dyfuzji dziur z obszaru n do p' oraz 'unoszenia elektronów z obszaru p do n' i 'dyfuzji elektronów z obszaru n do p'. Mapowanie na opcje: B (dyfuzja dziur p→n ✓), C (dyfuzja dziur n→p — to unoszenie? uwaga na różnicę). Dolna lista ma inne sformułowania niż górna."
+      },
+      "hint": "Przy polaryzacji przewodzącej: elektrony dyfundują z n do p, dziury dyfundują z p do n. To są prądy dyfuzji mniejszościowych nośników po przejściu złącza. Prądy unoszenia (jonów, akceptorów, donorów) nie płyną — jony są nieruchome."
+    },
+
+    {
+      "id": 11,
+      "source_file": "quiz/pytania/zestaw_2/11.png",
+      "type": "single_choice",
+      "topic": "Obwód z diodą i rezystorami — współczynnik nachylenia U_WY=f(U_WE) dla U_WE=-10V",
+      "question": "Ile wynosi współczynnik nachylenia charakterystyki U_WY = f(U_WE) dla przedstawionego obwodu w otoczeniu punktu pracy dla U_WE = -10 V, jeżeli R1 = R2 = 1 kΩ; charakterystyka diody D przedstawiona jest na rysunku poniżej.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/11.png",
+          "alt": "Obwód: U_WE po lewej. R1 równolegle z diodą D (szeregowo). R2 od węzła do masy. U_WY na R2. Charakterystyka diody idealnej z U_p=0.7V. Odręczne obliczenia: przy U_WE=-10V, U_WY=-9.3V, tg(α)=9.3/10=0.93."
+        },
+        "description": "Przy U_WE = -10 V: dioda przewodzi (w kierunku przewodzenia przy ujemnym napięciu — dioda 'obrócona'?). Z obliczeń na zdjęciu: U_WY = -9.3 V (U_WE − 0.7 V przechodząc przez diodę). tg(α) = 9.3/10 = 0.93. Ale żadna opcja nie ma 0.93.",
+        "components": ["R1 = 1 kΩ", "R2 = 1 kΩ", "D (dioda, U_p = 0.7 V)", "U_WE = -10 V"]
+      },
+      "choices": [
+        { "id": "A", "text": "1/2" },
+        { "id": "B", "text": "2/3" },
+        { "id": "C", "text": "1" },
+        { "id": "D", "text": "0" },
+        { "id": "E", "text": "0,7" }
+      ],
+      "answer": {
+        "value": "C",
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Zaznaczone '1' (opcja C) — BŁĘDNE. Obliczenia odręczne na zdjęciu: tg(α) = 9.3/10 = 0.93, ale tej wartości nie ma w opcjach. Przy U_WE=-10V dioda przewodzi (kierunek przewodzenia przy ujemnym napięciu) → U_WY = U_WE·R2/(R2) jeśli dioda zwarta = -10V → współczynnik = 1. Ale obliczenia z 0.7V sugerują że dioda NIE jest zwarta. Lub przy U_WE=-10V dioda jest zaporowo → obwód = dzielnik → 1/2. Sprzeczność. Wymaga szczegółowej weryfikacji topologii schematu."
+      },
+      "hint": "Kluczowa jest orientacja diody D względem napięcia U_WE=-10V. Jeśli D jest spolaryzowana przewodząco: U_D=0.7V, U_WY=(U_WE−0.7)·R2/R2 przy R1 zastąpionym diodą=zwarcie → współczynnik≈1. Jeśli zaporowo: dzielnik R1-R2 → 1/2."
+    },
+
+    {
+      "id": 12,
+      "source_file": "quiz/pytania/zestaw_2/12_13.png",
+      "type": "multi_choice",
+      "topic": "Tranzystor bipolarny — częstotliwości graniczne",
+      "question": "Zaznacz zdania prawdziwe odnośnie tranzystora bipolarnego. Wybierz wszystkie poprawne:",
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
+      "choices": [
+        { "id": "A", "text": "Częstotliwość graniczna w układzie WB jest około β-razy większa niż w układzie WE." },
+        { "id": "B", "text": "Częstotliwość przenoszenia to taka przy której moduł wzmocnienia prądowego wynosi 1." },
+        { "id": "C", "text": "Częstotliwość graniczna zależy od małosygnałowej konduktancji wejściowej tranzystora." },
+        { "id": "D", "text": "W układzie WE częstotliwość graniczna zależy tylko od pojemności C_b'e." },
+        { "id": "E", "text": "W układzie WE wzmocnienie prądowe jest duże i nie zależy od częstotliwości sygnału wejściowego." }
+      ],
+      "answer": {
+        "value": ["A", "B"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Zaznaczone B i D — BŁĘDNE. Merytorycznie: A (f_WB ≈ β·f_WE ✓), B (f_T to f przy |h21|=1 ✓), C (zależy od g_be=g_m/β ale też od pojemności), D (zależy też od C_b'c i rezystancji — nie tylko C_b'e, fałsz), E (fałsz — zależy od f)."
+      },
+      "hint": "f_T (tranzycji) = f przy |h21e|=1. f_β (graniczna WE) = f_T/β. f_α (graniczna WB) ≈ f_T ≈ β·f_β. W układzie WE: f_β = g_m/(2π·(C_b'e + C_b'c·(1+g_m·R_C))) — zależy od obu pojemności."
+    },
+
+    {
+      "id": 13,
+      "source_file": "quiz/pytania/zestaw_2/12_13.png",
+      "type": "multi_choice",
+      "topic": "Rezystancja szeregowa diody półprzewodnikowej",
+      "question": "Rezystancja szeregowa w diodzie półprzewodnikowej zależy od:",
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
+      "choices": [
+        { "id": "A", "text": "prądu płynącego przez diodę." },
+        { "id": "B", "text": "pojemności złączowej diody." },
+        { "id": "C", "text": "długości obszarów materiałów p i n." },
+        { "id": "D", "text": "powierzchni przekroju poprzecznego materiałów p i n." },
+        { "id": "E", "text": "koncentracji domieszki w materiałach p i n." }
+      ],
+      "answer": {
+        "value": ["C", "D", "E"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true,
+        "confirmation_note": "Wynik 1.00/1.00 pkt dla pytania 13. Zaznaczone C, D, E (wypełnione kwadraty przy tych opcjach)."
+      },
+      "hint": "Rezystancja szeregowa r_s diody to rezystancja obszarów kwazi-neutralnych p i n: r_s = ρ·L/A gdzie ρ=1/(q·μ·N) — zależy od długości L (C ✓), przekroju A (D ✓), koncentracji domieszki N (E ✓). Nie zależy od prądu ani pojemności złączowej."
+    },
+
+    {
+      "id": 14,
+      "source_file": "quiz/pytania/zestaw_2/14.png",
+      "type": "numeric",
+      "topic": "Wzmacniacz common-source NMOS — wzmocnienie (to samo co zestaw_1/id=4)",
+      "question": "W przedstawionym schemacie, w wybranym punkcie pracy tranzystora M1 NMOS transkonduktancja wynosi g_m = 5 mA/V, konduktancja wyjściowa g_ds = 1 mA/V. Wartości pozostałych elementów wynoszą: E1 = 4 V, E2 = 12 V, R1 = 100 kΩ, R2 = 1 kΩ. Jeżeli do wejścia IN doprowadzony zostanie sygnał sinusoidalny, to na wyjściu OUT uzyskamy wzmocnione napięcie sinusoidalne. Ile razy amplituda napięcia wyjściowego będzie większa od amplitudy napięcia wejściowego? Należy założyć że dla sygnałów zmiennych kondensatory C1 i C2 można traktować jako reaktancje o zerowych wartościach.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/14.png",
+          "alt": "Wzmacniacz common-source NMOS M1. IN przez C1 do bramki. Drain przez R2 do E2. OUT przez C2 z drenu (punkt X). Source przez R1 do E1. GND."
+        },
+        "description": "Identyczny schemat jak w zestaw_1/id=4.",
+        "components": ["M1 NMOS", "C1 (sprzęgający IN)", "C2 (sprzęgający OUT)", "R1 = 100 kΩ", "R2 = 1 kΩ", "E1 = 4 V", "E2 = 12 V"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 2.5,
+        "unit": null,
+        "tolerance": 0.05,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt (wpisane 1.5 — BŁĘDNE). Odręcznie napisane '2.5' jako poprawna odpowiedź. To samo pytanie co zestaw_1/id=4 gdzie odpowiedź = 2.5 (potwierdzone). Przyjmuję 2.5."
+      },
+      "hint": "|Av| = g_m · (R2 ∥ 1/g_ds) = 5 mA/V · (1 kΩ ∥ 1 kΩ) = 5 · 0.5 = 2.5"
+    },
+
+    {
+      "id": 15,
+      "source_file": "quiz/pytania/zestaw_2/15_16.png",
+      "type": "numeric",
+      "topic": "Tranzystor MOS w połączeniu diodowym — prąd (U=5V)",
+      "question": "Tranzystor MOS o napięciu progowym V_T = 3 V pracuje w połączeniu 'diodowym' (rysunek). Oblicz prąd I płynący przez tranzystor jeśli napięcie U = 5 V, a parametr transkonduktancyjny (C_ox μ_e W/L) = 1 mA/V². Wynik podaj w [mA] z dokładnością do jednego miejsca po przecinku.",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/15_16.png",
+          "alt": "Tranzystor MOS w połączeniu diodowym (G zwarte z D). U przyłożone między D a S. Prąd I wpływa do D."
+        },
+        "description": "V_GS = V_DS = U = 5 V. Nasycenie bo V_DS ≥ V_GS − V_T = 2V.",
+        "components": ["MOSFET (diodowe)", "U = 5 V", "V_T = 3 V", "k = 1 mA/V²"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 2.0,
+        "unit": "mA",
+        "tolerance": 0.05,
+        "confirmed": true,
+        "confirmation_note": "Wynik 1.00/1.00 pkt. Odpowiedź '2' w polu. Obliczenia na zdjęciu: I = (5−3)²/2 · 1 = 4/2 = 2 mA."
+      },
+      "hint": "Nasycenie: I = (k/2)·(V_GS − V_T)² = (1/2)·(5−3)² = 0.5·4 = 2.0 mA"
+    },
+
+    {
+      "id": 16,
+      "source_file": "quiz/pytania/zestaw_2/15_16.png",
+      "type": "multi_choice",
+      "topic": "Rezystancja termiczna obudowy tranzystora mocy",
+      "question": "Rezystancja termiczna obudowy tranzystora mocy przymocowanego do radiatora zależy od:",
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
+      "choices": [
+        { "id": "A", "text": "temperatury otoczenia" },
+        { "id": "B", "text": "powierzchni obudowy tranzystora" },
+        { "id": "C", "text": "temperatury radiatora" },
+        { "id": "D", "text": "temperatury złącza baza-kolektor" },
+        { "id": "E", "text": "grubości obudowy tranzystora" },
+        { "id": "F", "text": "temperatury złącza baza-emiter" }
+      ],
+      "answer": {
+        "value": ["B", "E"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Zaznaczone B i E — BŁĘDNE. Merytorycznie: rezystancja termiczna obudowy θ_JC zależy od geometrii i materiału obudowy: powierzchnia (B ✓) i grubość (E ✓) wpływają. Temperatura otoczenia/radiatora/złącza to warunki pracy, nie właściwość obudowy. Możliwe że poprawna jest tylko jedna z B/E lub brakuje innej opcji."
+      },
+      "hint": "Rezystancja termiczna obudowy R_θCA (case-to-ambient) lub R_θCS (case-to-sink) zależy od materiału i geometrii obudowy: grubości (E ✓) i powierzchni kontaktu/wymiany ciepła (B ✓). Temperatury są zmiennymi stanu, nie determinują R_θ."
+    },
+
+    {
+      "id": 17,
+      "source_file": "quiz/pytania/zestaw_2/17.png",
+      "type": "multi_choice",
+      "topic": "Dioda Zenera — właściwości",
+      "question": "Zaznacz poprawne odpowiedzi:",
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
+      "choices": [
+        { "id": "A", "text": "W złączu p-n spolaryzowanym zaporowo, zależność temperaturowa prądu wstecznego jest większa dla diody krzemowej niż dla diody germanowej." },
+        { "id": "B", "text": "W diodzie Zenera występuje ujemna rezystancja dynamiczna dla napięć niższych niż napięcie przebicia." },
+        { "id": "C", "text": "W diodzie Zenera występuje ujemna rezystancja dynamiczna w trakcie przebicia." },
+        { "id": "D", "text": "W złączu p-n spolaryzowanym zaporowo, prąd wsteczny jest większy dla diody germanowej niż dla diody krzemowej." }
+      ],
+      "answer": {
+        "value": ["C", "D"],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false,
+        "confirmation_note": "⚠️ SPRAWDŹ: Wynik 0.00/1.00 pkt. Zaznaczone C — BŁĘDNE. Merytorycznie: D (prąd wsteczny Ge > Si ✓ — germanowa ma mniejszą przerwę energetyczną). C (ujemna r_d w trakcie przebicia — charakterystyka Zenera jest pionowa/prawie pionowa, więc r_d ≈ 0 lub bardzo małe, nie ujemne). B — ujemna r_d dla napięć niższych od przebicia — fałsz. A — fałsz (Si ma mniejszy prąd wsteczny niż Ge). Poprawna prawdopodobnie D."
+      },
+      "hint": "Prąd wsteczny I_0 = A·exp(−E_g/kT). Ge: E_g≈0.66eV, Si: E_g≈1.12eV → I_0(Ge) >> I_0(Si) → D ✓. Dioda Zenera w przebiciu: charakterystyka stroma (mała dodatnia r_d), nie ujemna."
+    },
+
+    {
+      "id": 18,
+      "source_file": "quiz/pytania/zestaw_2/18.png",
+      "type": "numeric",
+      "topic": "Wzmacniacz CE z tranzystorem NPN — transkonduktancja g_m",
+      "question": "W przedstawionym układzie U_CC = 10 V, R_B = 465 kΩ, R_C = 1 kΩ, β = 260. Ile wynosi transkonduktancja? Odpowiedź proszę wyrazić w jednostkach [A/V].",
+      "diagram": {
+        "present": true,
+        "image": {
+          "source": "quiz/pytania/zestaw_2/18.png",
+          "alt": "Wzmacniacz CE: U_CC=10V, R_C w kolektorze, R_B od bazy do U_CC. Tranzystor NPN. Obliczenia: I_B=(10−0.7)/(465·10³)=2·10⁻⁵ A. I_C=β·I_B=5.2·10⁻³ A. g_m=I_C/V_T=0.2 A/V."
+        },
+        "description": "Polaryzacja stałoprądowa jednym rezystorem R_B. I_B = (U_CC − U_BE)/R_B. I_C = β·I_B. g_m = I_C/V_T.",
+        "components": ["U_CC = 10 V", "R_B = 465 kΩ", "R_C = 1 kΩ", "β = 260", "NPN BJT"]
+      },
+      "choices": null,
+      "answer": {
+        "value": 0.2,
+        "unit": "A/V",
+        "tolerance": 0.01,
+        "confirmed": true,
+        "confirmation_note": "Wynik 1.00/1.00 pkt. Odpowiedź 0.2 w polu. Obliczenia na zdjęciu: I_B=(10−0.7)/(465·10³)=2·10⁻⁵ A, I_C=260·2·10⁻⁵=5.2·10⁻³ A, g_m=I_C/V_T=5.2·10⁻³/26·10⁻³=0.2 A/V."
+      },
+      "hint": "I_B = (U_CC − U_BE) / R_B = (10 − 0.7) / 465000 ≈ 2·10⁻⁵ A. I_C = β·I_B = 260·2·10⁻⁵ = 5.2 mA. g_m = I_C / V_T = 5.2 mA / 26 mV = 0.2 A/V."
+    }
+
+  ]
+}
