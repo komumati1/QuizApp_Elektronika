@@ -1,8 +1,8 @@
 # Quiz — Elementy Elektroniczne
 
-[![Deploy to GitHub Pages](https://github.com/komumati1/QuizApp_Elektronika/actions/workflows/deploy.yml/badge.svg)](https://github.com/USERNAME/REPO/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/komumati1/QuizApp_Elektronika/actions/workflows/deploy.yml/badge.svg)](https://github.com/komumati1/QuizApp_Elektronika/actions/workflows/deploy.yml)
 
-**[▶ Otwórz quiz online](https://USERNAME.github.io/REPO/)**
+**[▶ Otwórz quiz online](https://komumati1.github.io/QuizApp_Elektronika/)**
 
 
 ---
