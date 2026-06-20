@@ -31,15 +31,12 @@ jobs:
           node-version: 24
 
       - name: Install dependencies
-        working-directory: quiz
         run: npm install
 
       - name: Prepare static assets (images + JSONs)
-        working-directory: quiz
         run: node scripts/prepare-static.js
 
       - name: Build
-        working-directory: quiz
         env:
           NEXT_PUBLIC_READONLY: 'true'
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
@@ -51,7 +48,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: quiz/out
+          path: out
 
       - name: Deploy to GitHub Pages
         id: deployment
