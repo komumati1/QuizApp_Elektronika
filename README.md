@@ -1,31 +1,44 @@
 # Quiz — Elementy Elektroniczne
 
-Aplikacja do nauki z pytaniami z egzaminów AGH.
+[![Deploy to GitHub Pages](https://github.com/komumati1/QuizApp_Elektronika/actions/workflows/deploy.yml/badge.svg)](https://github.com/USERNAME/REPO/actions/workflows/deploy.yml)
 
-## Wymagania
+**[▶ Otwórz quiz online](https://USERNAME.github.io/REPO/)**
 
-- Node.js 18+
+> Zastąp `USERNAME` i `REPO` swoją nazwą użytkownika i repozytorium.
 
-## Uruchomienie
+---
+
+## Uruchomienie lokalne
 
 ```bash
 npm install
 npm run dev
 ```
 
-Otwórz http://localhost:5173
+Otwórz **http://localhost:3000**
 
-## Dane
+Lokalnie dostępna jest edycja pytań (zapis do JSON). Na GitHub Pages edycja jest wyłączona.
 
-Pytania w `pytania_extracted/extracted*.json`. Każdy plik to osobny zestaw — można je zaznaczać/odznaczać na ekranie startowym.
+## Deploy na GitHub Pages
 
-Zdjęcia źródłowe w `pytania/zestaw_*/`.
+Push na `main` → GitHub Actions automatycznie buduje i deployuje.
 
-## Funkcje
+Wymagane ustawienie w repo: **Settings → Pages → Source → GitHub Actions**
 
-- Losowa kolejność lub kolejność z pliku
-- Pytania numeryczne (z tolerancją), single/multi choice
-- Podgląd oryginalnego zdjęcia z egzaminu
-- Edycja pytania/odpowiedzi zapisuje się do JSON
-- Oznaczanie pytań jako problematycznych
-- Powtórka błędnych i oznaczonych pytań po zakończeniu quizu
+## Dodawanie pytań
+
+Dorzuć plik `pytania_extracted/extracted_N.json` zgodny ze schematem (patrz `extracted.json`).
+Pojawi się automatycznie w selektorze źródeł po odświeżeniu.
+
+## Struktura
+
+```
+quiz/
+  pytania/zestaw_*/     zdjęcia źródłowe (w repo)
+  pytania_extracted/    pliki JSON z pytaniami
+  components/           komponenty React
+  lib/                  typy, loader danych, helper URL
+  scripts/              prepare-static.js (kopiuje assets przed buildem)
+  app/                  Next.js App Router
+  server.js             Express — lokalny backend (API + serwowanie zdjęć)
+```

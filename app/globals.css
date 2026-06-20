@@ -77,11 +77,9 @@ textarea { resize: vertical; min-height: 70px; }
 
 .correct { color: #1a6e2e; font-weight: bold; }
 .wrong   { color: #b52020; font-weight: bold; }
-.warn    { color: #a05000; }
 
 hr { border: none; border-top: 1px solid #ddd; margin: 10px 0; }
 
-/* Modal */
 .overlay {
   position: fixed;
   inset: 0;
@@ -138,6 +136,5 @@ img.source-img {
   font-size: 12px;
   font-weight: 600;
 }
-.badge-warn { background: #fff3cd; color: #7d5a00; border: 1px solid #ffc107; }
-.badge-ok   { background: #d4edda; color: #155724; border: 1px solid #28a745; }
+.badge-warn   { background: #fff3cd; color: #7d5a00; border: 1px solid #ffc107; }
 .badge-marked { background: #fff3e0; color: #7d4000; border: 1px solid #ff9800; }

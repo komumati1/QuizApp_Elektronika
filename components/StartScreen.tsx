@@ -1,4 +1,6 @@
-import { SourceInfo } from '../types'
+'use client'
+
+import { SourceInfo } from '@/lib/types'
 
 interface Props {
   sources: SourceInfo[]
@@ -9,12 +11,9 @@ interface Props {
 }
 
 function getLabel(s: SourceInfo): string {
-  if (!s.metadata) return s.filename
-  const dir = s.metadata.source_dir ?? ''
-  // "quiz/pytania/zestaw_2/" → "zestaw_2"
+  const dir = s.metadata?.source_dir ?? ''
   const match = dir.match(/zestaw_\w+/)
-  const name = match ? match[0] : s.filename.replace('.json', '')
-  return name
+  return match ? match[0] : s.filename.replace('.json', '')
 }
 
 export default function StartScreen({ sources, selectedFiles, onSelectFiles, error, onStart }: Props) {
@@ -23,13 +22,12 @@ export default function StartScreen({ sources, selectedFiles, onSelectFiles, err
     .filter(s => selectedFiles.includes(s.filename))
     .reduce((sum, s) => sum + s.questionCount, 0)
 
-  const toggle = (filename: string) => {
+  const toggle = (filename: string) =>
     onSelectFiles(
       selectedFiles.includes(filename)
         ? selectedFiles.filter(f => f !== filename)
         : [...selectedFiles, filename]
     )
-  }
 
   return (
     <div>
@@ -39,8 +37,7 @@ export default function StartScreen({ sources, selectedFiles, onSelectFiles, err
         <div className="card" style={{ borderColor: '#b52020', background: '#fff5f5', marginTop: 12 }}>
           <p className="wrong">Błąd: {error}</p>
           <p style={{ fontSize: 13, marginTop: 4 }}>
-            Upewnij się że serwer działa (<code>npm run dev</code>) i plik{' '}
-            <code>pytania_extracted/extracted.json</code> istnieje.
+            Uruchom serwer: <code>npm run dev</code>
           </p>
         </div>
       )}
@@ -59,7 +56,6 @@ export default function StartScreen({ sources, selectedFiles, onSelectFiles, err
 
           {sources.map(s => {
             const selected = selectedFiles.includes(s.filename)
-            const label = getLabel(s)
             const note = s.metadata?.file_note ?? s.metadata?.notes?.[0]
             return (
               <label
@@ -79,20 +75,16 @@ export default function StartScreen({ sources, selectedFiles, onSelectFiles, err
                 />
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div className="row" style={{ gap: 8 }}>
-                    <strong style={{ textTransform: 'capitalize' }}>{label}</strong>
+                    <strong style={{ textTransform: 'capitalize' }}>{getLabel(s)}</strong>
                     <span style={{ fontSize: 12, color: '#777' }}>
                       {s.filename} — {s.questionCount} pytań
                     </span>
                   </div>
                   {s.metadata?.source_dir && (
-                    <div style={{ fontSize: 11, color: '#999', marginTop: 2 }}>
-                      {s.metadata.source_dir}
-                    </div>
+                    <div style={{ fontSize: 11, color: '#999', marginTop: 2 }}>{s.metadata.source_dir}</div>
                   )}
                   {note && (
-                    <div style={{ fontSize: 11, color: '#a05000', marginTop: 3, lineHeight: 1.4 }}>
-                      {note}
-                    </div>
+                    <div style={{ fontSize: 11, color: '#a05000', marginTop: 3, lineHeight: 1.4 }}>{note}</div>
                   )}
                 </div>
               </label>
@@ -100,11 +92,8 @@ export default function StartScreen({ sources, selectedFiles, onSelectFiles, err
           })}
 
           {selectedFiles.length === 0 && (
-            <p style={{ fontSize: 13, color: '#b52020', marginTop: 6 }}>
-              Zaznacz co najmniej jeden plik źródłowy.
-            </p>
+            <p style={{ fontSize: 13, color: '#b52020', marginTop: 6 }}>Zaznacz co najmniej jeden plik.</p>
           )}
-
           <div style={{ marginTop: 10, fontSize: 13, color: '#555' }}>
             Wybrano: <strong>{selectedFiles.length}</strong> plików,{' '}
             <strong>{totalSelected}</strong> pytań łącznie
@@ -113,17 +102,10 @@ export default function StartScreen({ sources, selectedFiles, onSelectFiles, err
       )}
 
       <div className="row" style={{ marginTop: 14 }}>
-        <button
-          className="primary"
-          onClick={() => onStart(true)}
-          disabled={selectedFiles.length === 0}
-        >
+        <button className="primary" onClick={() => onStart(true)} disabled={selectedFiles.length === 0}>
           Losowa kolejność
         </button>
-        <button
-          onClick={() => onStart(false)}
-          disabled={selectedFiles.length === 0}
-        >
+        <button onClick={() => onStart(false)} disabled={selectedFiles.length === 0}>
           Kolejność z pliku
         </button>
       </div>

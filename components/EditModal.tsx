@@ -1,5 +1,7 @@
+'use client'
+
 import { useState } from 'react'
-import { Question } from '../types'
+import { Question } from '@/lib/types'
 
 interface Props {
   question: Question
@@ -61,27 +63,18 @@ export default function EditModal({ question: initial, onSave, onClose }: Props)
           <div className="row" style={{ gap: 12, alignItems: 'flex-start' }}>
             <div className="field" style={{ flex: 2 }}>
               <label>Wartość</label>
-              <input
-                type="number" step="any"
-                value={String(q.answer.value)}
-                onChange={e => setAns('value', parseFloat(e.target.value))}
-              />
+              <input type="number" step="any" value={String(q.answer.value)}
+                onChange={e => setAns('value', parseFloat(e.target.value))} />
             </div>
             <div className="field" style={{ flex: 1 }}>
               <label>Jednostka</label>
-              <input
-                type="text"
-                value={q.answer.unit ?? ''}
-                onChange={e => setAns('unit', e.target.value || null)}
-              />
+              <input type="text" value={q.answer.unit ?? ''}
+                onChange={e => setAns('unit', e.target.value || null)} />
             </div>
             <div className="field" style={{ flex: 1 }}>
               <label>Tolerancja (0.05 = 5%)</label>
-              <input
-                type="number" step="any"
-                value={String(q.answer.tolerance ?? 0.05)}
-                onChange={e => setAns('tolerance', parseFloat(e.target.value))}
-              />
+              <input type="number" step="any" value={String(q.answer.tolerance ?? 0.05)}
+                onChange={e => setAns('tolerance', parseFloat(e.target.value))} />
             </div>
           </div>
         )}
@@ -93,37 +86,30 @@ export default function EditModal({ question: initial, onSave, onClose }: Props)
               {q.choices.map((c, i) => (
                 <div key={c.id} className="row" style={{ marginBottom: 6 }}>
                   <span style={{ minWidth: 28, fontWeight: 700, fontSize: 14 }}>{c.id}.</span>
-                  <input
-                    type="text"
-                    value={c.text}
-                    style={{ flex: 1 }}
+                  <input type="text" value={c.text} style={{ flex: 1 }}
                     onChange={e => {
                       const choices = q.choices!.map((ch, ci) =>
                         ci === i ? { ...ch, text: e.target.value } : ch
                       )
                       setQ(prev => ({ ...prev, choices }))
-                    }}
-                  />
+                    }} />
                 </div>
               ))}
             </div>
             <div className="field">
               <label>
                 Poprawna odpowiedź
-                {q.type === 'multi_choice' ? ' (rozdziel przecinkami, np. A,C,E)' : ' (ID, np. B)'}
+                {q.type === 'multi_choice' ? ' (rozdziel przecinkami, np. A,C,E)' : ' (np. B)'}
               </label>
-              <input
-                type="text"
+              <input type="text"
                 value={Array.isArray(q.answer.value) ? q.answer.value.join(',') : String(q.answer.value)}
                 onChange={e => {
                   const raw = e.target.value.toUpperCase()
-                  if (q.type === 'multi_choice') {
-                    setAns('value', raw.split(',').map(s => s.trim()).filter(Boolean))
-                  } else {
-                    setAns('value', raw.trim())
-                  }
-                }}
-              />
+                  setAns('value', q.type === 'multi_choice'
+                    ? raw.split(',').map(s => s.trim()).filter(Boolean)
+                    : raw.trim()
+                  )
+                }} />
             </div>
           </>
         )}
@@ -131,22 +117,16 @@ export default function EditModal({ question: initial, onSave, onClose }: Props)
         <div className="field" style={{ marginTop: 4 }}>
           <label>Potwierdzona?</label>
           <label style={{ display: 'flex', gap: 6, alignItems: 'center', marginTop: 4, cursor: 'pointer' }}>
-            <input
-              type="checkbox"
-              checked={q.answer.confirmed ?? false}
-              onChange={e => setAns('confirmed', e.target.checked)}
-            />
+            <input type="checkbox" checked={q.answer.confirmed ?? false}
+              onChange={e => setAns('confirmed', e.target.checked)} />
             Tak, odpowiedź jest potwierdzona
           </label>
         </div>
 
         <div className="field">
           <label>Notatka potwierdzenia</label>
-          <textarea
-            rows={2}
-            value={q.answer.confirmation_note ?? ''}
-            onChange={e => setAns('confirmation_note', e.target.value || undefined)}
-          />
+          <textarea rows={2} value={q.answer.confirmation_note ?? ''}
+            onChange={e => setAns('confirmation_note', e.target.value || undefined)} />
         </div>
 
         <hr />

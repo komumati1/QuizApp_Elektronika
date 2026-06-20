@@ -1,4 +1,6 @@
-import { Question } from '../types'
+'use client'
+
+import { Question } from '@/lib/types'
 
 interface Props {
   wrongUids: string[]
@@ -14,7 +16,7 @@ export default function ResultsScreen({ wrongUids, markedUids, sessionTotal, all
   const toRepeat = [...new Set([...wrongUids, ...markedUids])]
   const getQ = (uid: string) => allQuestions.find(q => q._uid === uid)
 
-  const renderQuestion = (uid: string) => {
+  const renderItem = (uid: string) => {
     const q = getQ(uid)
     if (!q) return null
     const src = q._sourceFile?.replace('.json', '') ?? ''
@@ -40,23 +42,21 @@ export default function ResultsScreen({ wrongUids, markedUids, sessionTotal, all
           : <p className="wrong">{wrongUids.length} błędnych</p>
         }
         {markedUids.length > 0 && (
-          <p style={{ marginTop: 4, color: '#a05000' }}>
-            {markedUids.length} oznaczonych jako problematyczne
-          </p>
+          <p style={{ marginTop: 4, color: '#a05000' }}>{markedUids.length} oznaczonych jako problematyczne</p>
         )}
       </div>
 
       {wrongUids.length > 0 && (
         <div className="card">
           <h3 className="wrong" style={{ marginBottom: 8 }}>Błędne odpowiedzi</h3>
-          <ul style={{ paddingLeft: 18 }}>{wrongUids.map(renderQuestion)}</ul>
+          <ul style={{ paddingLeft: 18 }}>{wrongUids.map(renderItem)}</ul>
         </div>
       )}
 
       {markedUids.length > 0 && (
         <div className="card">
           <h3 style={{ color: '#a05000', marginBottom: 8 }}>Oznaczone jako problematyczne</h3>
-          <ul style={{ paddingLeft: 18 }}>{markedUids.map(renderQuestion)}</ul>
+          <ul style={{ paddingLeft: 18 }}>{markedUids.map(renderItem)}</ul>
         </div>
       )}
 

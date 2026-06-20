@@ -1,8 +1,13 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { QuizData, Question, SourceInfo } from './types'
-import StartScreen from './components/StartScreen'
-import QuizScreen from './components/QuizScreen'
-import ResultsScreen from './components/ResultsScreen'
+import { QuizData, Question, SourceInfo } from '@/lib/types'
+import { loadSources, loadQuestions, saveQuestion } from '@/lib/quizLoader'
+import StartScreen from './StartScreen'
+import QuizScreen from './QuizScreen'
+import ResultsScreen from './ResultsScreen'
+
+const READONLY = process.env.NEXT_PUBLIC_READONLY === 'true'
 
 type Phase = 'loading' | 'start' | 'quiz' | 'results'
 
@@ -27,27 +32,18 @@ export default function App() {
   const [error, setError] = useState<string | null>(null)
   const [isRepeat, setIsRepeat] = useState(false)
 
-  // Load available source files
   useEffect(() => {
-    fetch('/api/sources')
-      .then(r => r.json())
-      .then((s: SourceInfo[]) => {
+    loadSources()
+      .then(s => {
         setSources(s)
-        setSelectedFiles(s.map(f => f.filename)) // select all by default
+        setSelectedFiles(s.map(f => f.filename))
         setPhase('start')
       })
       .catch(e => {
-        setError('Nie można połączyć z serwerem: ' + String(e))
+        setError(String(e))
         setPhase('start')
       })
   }, [])
-
-  const loadQuestions = async (files: string[]): Promise<QuizData> => {
-    const params = files.length > 0 ? `?files=${files.join(',')}` : ''
-    const r = await fetch('/api/questions' + params)
-    if (!r.ok) throw new Error('HTTP ' + r.status)
-    return r.json()
-  }
 
   const startQuiz = async (randomize: boolean) => {
     try {
@@ -61,14 +57,14 @@ export default function App() {
       setIsRepeat(false)
       setPhase('quiz')
     } catch (e) {
-      setError('Błąd ładowania pytań: ' + String(e))
+      setError('Błąd ładowania: ' + String(e))
     }
   }
 
-  const startRepeat = async (uidsToRepeat: string[]) => {
+  const startRepeat = (uidsToRepeat: string[]) => {
     if (!data) return
-    const repeatQs = shuffle(data.questions.filter(q => uidsToRepeat.includes(q._uid!)))
-    setSessionQuestions(repeatQs)
+    const qs = shuffle(data.questions.filter(q => uidsToRepeat.includes(q._uid!)))
+    setSessionQuestions(qs)
     setCurrentIdx(0)
     setWrongUids([])
     setIsRepeat(true)
@@ -76,11 +72,9 @@ export default function App() {
   }
 
   const handleAnswer = (uid: string, correct: boolean) => {
-    if (!correct) {
-      setWrongUids(prev => prev.includes(uid) ? prev : [...prev, uid])
-    } else {
-      setWrongUids(prev => prev.filter(u => u !== uid))
-    }
+    setWrongUids(prev =>
+      correct ? prev.filter(u => u !== uid) : prev.includes(uid) ? prev : [...prev, uid]
+    )
   }
 
   const handleMark = (uid: string, mark: boolean) => {
@@ -90,30 +84,19 @@ export default function App() {
   }
 
   const handleNext = () => {
-    if (currentIdx < sessionQuestions.length - 1) {
-      setCurrentIdx(i => i + 1)
-    } else {
-      setPhase('results')
-    }
+    if (currentIdx < sessionQuestions.length - 1) setCurrentIdx(i => i + 1)
+    else setPhase('results')
   }
 
   const handleUpdateQuestion = async (updated: Question) => {
-    if (!data) return
-    const filename = updated._sourceFile!
-    const r = await fetch(`/api/question/${filename}/${updated.id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updated),
-    })
-    if (!r.ok) throw new Error('Save failed')
+    if (READONLY || !data) return
+    await saveQuestion(updated)
     const newQuestions = data.questions.map(q => q._uid === updated._uid ? updated : q)
     setData({ ...data, questions: newQuestions })
     setSessionQuestions(prev => prev.map(q => q._uid === updated._uid ? updated : q))
   }
 
-  if (phase === 'loading') {
-    return <div style={{ padding: 32 }}>Ładowanie...</div>
-  }
+  if (phase === 'loading') return <div style={{ padding: 32 }}>Ładowanie...</div>
 
   if (phase === 'start') {
     return (
@@ -134,6 +117,7 @@ export default function App() {
         currentIdx={currentIdx}
         markedUids={markedUids}
         isRepeat={isRepeat}
+        readonly={READONLY}
         onAnswer={handleAnswer}
         onMark={handleMark}
         onNext={handleNext}
@@ -142,7 +126,6 @@ export default function App() {
     )
   }
 
-  // results
   return (
     <ResultsScreen
       wrongUids={wrongUids}
