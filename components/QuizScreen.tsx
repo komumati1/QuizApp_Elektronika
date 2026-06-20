@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Question } from '@/lib/types'
+import { Question, Choice } from '@/lib/types'
 import { imageUrl } from '@/lib/imageUrl'
 import EditModal from './EditModal'
 
@@ -11,10 +11,20 @@ interface Props {
   markedUids: string[]
   isRepeat: boolean
   readonly: boolean
+  shuffleChoices: boolean
   onAnswer: (uid: string, correct: boolean) => void
   onMark: (uid: string, mark: boolean) => void
   onNext: () => void
   onUpdateQuestion: (q: Question) => Promise<void>
+}
+
+function shuffleArray<T>(arr: T[]): T[] {
+  const a = [...arr]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
 }
 
 function checkAnswer(q: Question, userAnswer: string | string[]): boolean {
@@ -46,28 +56,33 @@ interface QState {
   showSource: boolean
   diagImgError: boolean
   srcImgError: boolean
+  displayChoices: Choice[] | null
 }
 
-function makeState(q: Question): QState {
+function makeState(q: Question, doShuffle: boolean): QState {
+  const displayChoices = q.choices
+    ? (doShuffle ? shuffleArray(q.choices) : [...q.choices])
+    : null
   return {
     userAnswer: q.type === 'multi_choice' ? [] : '',
     checked: false, correct: false,
     showHint: false, showDiagram: q.diagram.present,
     showSource: false, diagImgError: false, srcImgError: false,
+    displayChoices,
   }
 }
 
 export default function QuizScreen({
-  questions, currentIdx, markedUids, isRepeat, readonly,
+  questions, currentIdx, markedUids, isRepeat, readonly, shuffleChoices,
   onAnswer, onMark, onNext, onUpdateQuestion,
 }: Props) {
   const q = questions[currentIdx]
   const uid = q._uid!
-  const [s, setS] = useState<QState>(() => makeState(q))
+  const [s, setS] = useState<QState>(() => makeState(q, shuffleChoices))
   const [showEdit, setShowEdit] = useState(false)
 
   useEffect(() => {
-    setS(makeState(q))
+    setS(makeState(q, shuffleChoices))
     setShowEdit(false)
   }, [currentIdx]) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -222,9 +237,9 @@ export default function QuizScreen({
           </div>
         )}
 
-        {!isUnsupported && q.type === 'single_choice' && q.choices && (
+        {!isUnsupported && q.type === 'single_choice' && s.displayChoices && (
           <div>
-            {q.choices.map(c => (
+            {s.displayChoices.map(c => (
               <label key={c.id} style={{
                 display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10,
                 cursor: s.checked ? 'default' : 'pointer', padding: '6px 8px', borderRadius: 3,
@@ -243,10 +258,10 @@ export default function QuizScreen({
           </div>
         )}
 
-        {!isUnsupported && q.type === 'multi_choice' && q.choices && (
+        {!isUnsupported && q.type === 'multi_choice' && s.displayChoices && (
           <div>
             <p style={{ fontSize: 12, color: '#777', marginBottom: 8 }}>Zaznacz wszystkie poprawne:</p>
-            {q.choices.map(c => {
+            {s.displayChoices.map(c => {
               const selected = (s.userAnswer as string[]).includes(c.id)
               const isCorrect = Array.isArray(q.answer.value) && (q.answer.value as string[]).includes(c.id)
               return (

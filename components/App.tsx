@@ -31,6 +31,7 @@ export default function App() {
   const [markedUids, setMarkedUids] = useState<string[]>([])
   const [error, setError] = useState<string | null>(null)
   const [isRepeat, setIsRepeat] = useState(false)
+  const [shuffleChoices, setShuffleChoices] = useState(true)
 
   useEffect(() => {
     loadSources()
@@ -104,6 +105,8 @@ export default function App() {
         sources={sources}
         selectedFiles={selectedFiles}
         onSelectFiles={setSelectedFiles}
+        shuffleChoices={shuffleChoices}
+        onShuffleChoices={setShuffleChoices}
         error={error}
         onStart={startQuiz}
       />
@@ -118,6 +121,7 @@ export default function App() {
         markedUids={markedUids}
         isRepeat={isRepeat}
         readonly={READONLY}
+        shuffleChoices={shuffleChoices}
         onAnswer={handleAnswer}
         onMark={handleMark}
         onNext={handleNext}

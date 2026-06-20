@@ -6,6 +6,8 @@ interface Props {
   sources: SourceInfo[]
   selectedFiles: string[]
   onSelectFiles: (files: string[]) => void
+  shuffleChoices: boolean
+  onShuffleChoices: (v: boolean) => void
   error: string | null
   onStart: (randomize: boolean) => void
 }
@@ -16,7 +18,7 @@ function getLabel(s: SourceInfo): string {
   return match ? match[0] : s.filename.replace('.json', '')
 }
 
-export default function StartScreen({ sources, selectedFiles, onSelectFiles, error, onStart }: Props) {
+export default function StartScreen({ sources, selectedFiles, onSelectFiles, shuffleChoices, onShuffleChoices, error, onStart }: Props) {
   const allSelected = sources.length > 0 && selectedFiles.length === sources.length
   const totalSelected = sources
     .filter(s => selectedFiles.includes(s.filename))
@@ -101,9 +103,21 @@ export default function StartScreen({ sources, selectedFiles, onSelectFiles, err
         </div>
       )}
 
+      <div className="card" style={{ marginTop: 12 }}>
+        <span className="label" style={{ marginBottom: 8, display: 'block' }}>Opcje</span>
+        <label style={{ display: 'flex', gap: 8, alignItems: 'center', cursor: 'pointer' }}>
+          <input
+            type="checkbox"
+            checked={shuffleChoices}
+            onChange={e => onShuffleChoices(e.target.checked)}
+          />
+          Losuj kolejność odpowiedzi
+        </label>
+      </div>
+
       <div className="row" style={{ marginTop: 14 }}>
         <button className="primary" onClick={() => onStart(true)} disabled={selectedFiles.length === 0}>
-          Losowa kolejność
+          Losowa kolejność pytań
         </button>
         <button onClick={() => onStart(false)} disabled={selectedFiles.length === 0}>
           Kolejność z pliku
