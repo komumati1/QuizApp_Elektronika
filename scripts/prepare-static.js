@@ -3,12 +3,21 @@
 // - Copies images to public/{source_path} with normalized filenames
 //   (dots/commas before extension → underscores, matching JSON paths)
 // - Generates public/pytania_extracted/manifest.json
+//
+// JSON paths look like "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_09_43.png"
+// (prefix "quiz/" because they were extracted from a subdirectory context).
+//
+// Resolution order for each image:
+//   1. parentDir/sourcePath        — works locally (elementy_elektroniczne/ as parent)
+//   2. parentDir/sourcePath fuzzy  — same + filename normalization
+//   3. projectDir/stripped         — works in CI (repo root = project root, strip "quiz/" prefix)
+//   4. projectDir/stripped fuzzy   — same + filename normalization
 
 const fs = require('fs')
 const path = require('path')
 
-const projectDir = process.cwd()              // quiz/
-const parentDir = path.join(projectDir, '..')  // elementy_elektroniczne/
+const projectDir = process.cwd()
+const parentDir = path.join(projectDir, '..')
 
 function normalizeFilename(name) {
   const lastDot = name.lastIndexOf('.')
@@ -16,18 +25,32 @@ function normalizeFilename(name) {
   return name.substring(0, lastDot).replace(/[.,]/g, '_') + name.substring(lastDot)
 }
 
-// Find the actual file on disk matching a normalized JSON path
-function resolveImage(relPathFromParent) {
-  const absolute = path.join(parentDir, relPathFromParent)
-  if (fs.existsSync(absolute)) return absolute
-
-  const dir = path.dirname(absolute)
-  const base = path.basename(absolute)
-  const normalizedBase = normalizeFilename(base)
-
+function findInDir(dir, normalizedBase) {
   if (!fs.existsSync(dir)) return null
   const match = fs.readdirSync(dir).find(f => normalizeFilename(f) === normalizedBase)
   return match ? path.join(dir, match) : null
+}
+
+function resolveImage(sourcePath) {
+  const base = path.basename(sourcePath)
+  const normalizedBase = normalizeFilename(base)
+
+  // 1 & 2: relative to parent directory (local dev layout)
+  const absParent = path.join(parentDir, sourcePath)
+  if (fs.existsSync(absParent)) return absParent
+  const foundParent = findInDir(path.dirname(absParent), normalizedBase)
+  if (foundParent) return foundParent
+
+  // 3 & 4: strip first path segment ("quiz/") and look in project dir (CI layout)
+  const stripped = sourcePath.split('/').slice(1).join('/')
+  if (stripped) {
+    const absProject = path.join(projectDir, stripped)
+    if (fs.existsSync(absProject)) return absProject
+    const foundProject = findInDir(path.dirname(absProject), normalizedBase)
+    if (foundProject) return foundProject
+  }
+
+  return null
 }
 
 function copyImage(sourcePath) {
@@ -36,9 +59,8 @@ function copyImage(sourcePath) {
     console.warn(`  ⚠  Not found: ${sourcePath}`)
     return
   }
-  // Destination keeps the path from JSON (already normalized) under public/
   const destPath = path.join(projectDir, 'public', sourcePath)
-  if (fs.existsSync(destPath)) return  // already copied
+  if (fs.existsSync(destPath)) return
   fs.mkdirSync(path.dirname(destPath), { recursive: true })
   fs.copyFileSync(actualFile, destPath)
   console.log(`  ✓  ${sourcePath}`)
