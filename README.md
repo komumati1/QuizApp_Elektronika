@@ -4,7 +4,6 @@
 
 **[▶ Otwórz quiz online](https://USERNAME.github.io/REPO/)**
 
-> Zastąp `USERNAME` i `REPO` swoją nazwą użytkownika i repozytorium.
 
 ---
 
