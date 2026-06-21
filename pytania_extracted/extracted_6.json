@@ -8,9 +8,7 @@
     "schema_version": "1.0",
     "total_questions": 50,
     "notes": [
-      "Pytanie 24 (max wzmocnienie napięciowe) — brak zaznaczonej odpowiedzi, wymaga weryfikacji.",
-      "Pytanie 28 (VOUT przy VIN=-5V, dioda zaporowa) — dwie odpowiedzi zaznaczone (C i E), C to błędna odpowiedź systemu, E to poprawna. Zweryfikować.",
-      "Pytanie 45 (czas opadania prądu diody) — dwie opcje zaznaczone (B i E), wymaga weryfikacji."
+      "Potwierdzony."
     ]
   },
   "questions": [
