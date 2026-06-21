@@ -116,11 +116,21 @@ export default function QuizScreen({
     }))
   }
 
+  const labelMap: Record<string, string> = {}
+  if (s.displayChoices) {
+    s.displayChoices.forEach((c, i) => { labelMap[c.id] = String.fromCharCode(65 + i) })
+  }
+
   const correctDisplay = (() => {
     const v = q.answer.value
-    if (Array.isArray(v)) return v.join(', ')
+    if (Array.isArray(v)) {
+      const labels = (v as string[]).map(id => labelMap[id] ?? id).sort()
+      return labels.join(', ')
+    }
     if (typeof v === 'object' && v !== null)
       return (v as Record<string, unknown>).description as string ?? JSON.stringify(v)
+    if (q.type === 'single_choice' || q.type === 'multi_choice')
+      return labelMap[String(v)] ?? String(v)
     return String(v)
   })()
 
@@ -166,7 +176,7 @@ export default function QuizScreen({
           {s.showDiagram && (
             <>
               {q.diagram.image && !s.diagImgError && (
-                <img className="source-img" src={imageUrl(q.diagram.image.source)} alt={q.diagram.image.alt}
+                <img className="source-img" src={imageUrl(q.diagram.image.source)} alt=""
                   onError={() => setS(prev => ({ ...prev, diagImgError: true }))} />
               )}
               {q.diagram.image && s.diagImgError && (
@@ -194,7 +204,7 @@ export default function QuizScreen({
         </div>
         {s.showSource && (
           !s.srcImgError ? (
-            <img className="source-img" src={imageUrl(q.source_file)} alt={'Źródło: ' + q.source_file}
+            <img className="source-img" src={imageUrl(q.source_file)} alt=""
               onError={() => setS(prev => ({ ...prev, srcImgError: true }))} />
           ) : (
             <p style={{ fontSize: 12, color: '#b52020', marginTop: 8 }}>
@@ -239,22 +249,25 @@ export default function QuizScreen({
 
         {!isUnsupported && q.type === 'single_choice' && s.displayChoices && (
           <div>
-            {s.displayChoices.map(c => (
-              <label key={c.id} style={{
-                display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10,
-                cursor: s.checked ? 'default' : 'pointer', padding: '6px 8px', borderRadius: 3,
-                background: s.checked && s.userAnswer === c.id ? (s.correct ? '#eafaf1' : '#fdf0f0') : undefined,
-              }}>
-                <input type="radio" name={`q_${uid}`} value={c.id} disabled={s.checked}
-                  checked={s.userAnswer === c.id}
-                  onChange={() => setS(prev => ({ ...prev, userAnswer: c.id }))}
-                  style={{ marginTop: 3, flexShrink: 0 }} />
-                <span>
-                  <strong>{c.id}.</strong> {c.text}
-                  {s.checked && c.id === String(q.answer.value) && <span className="correct" style={{ marginLeft: 8 }}>✓</span>}
-                </span>
-              </label>
-            ))}
+            {s.displayChoices.map(c => {
+              const label = labelMap[c.id] ?? c.id
+              return (
+                <label key={c.id} style={{
+                  display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10,
+                  cursor: s.checked ? 'default' : 'pointer', padding: '6px 8px', borderRadius: 3,
+                  background: s.checked && s.userAnswer === c.id ? (s.correct ? '#eafaf1' : '#fdf0f0') : undefined,
+                }}>
+                  <input type="radio" name={`q_${uid}`} value={c.id} disabled={s.checked}
+                    checked={s.userAnswer === c.id}
+                    onChange={() => setS(prev => ({ ...prev, userAnswer: c.id }))}
+                    style={{ marginTop: 3, flexShrink: 0 }} />
+                  <span>
+                    <strong>{label}.</strong> {c.text}
+                    {s.checked && c.id === String(q.answer.value) && <span className="correct" style={{ marginLeft: 8 }}>✓</span>}
+                  </span>
+                </label>
+              )
+            })}
           </div>
         )}
 
@@ -262,6 +275,7 @@ export default function QuizScreen({
           <div>
             <p style={{ fontSize: 12, color: '#777', marginBottom: 8 }}>Zaznacz wszystkie poprawne:</p>
             {s.displayChoices.map(c => {
+              const label = labelMap[c.id] ?? c.id
               const selected = (s.userAnswer as string[]).includes(c.id)
               const isCorrect = Array.isArray(q.answer.value) && (q.answer.value as string[]).includes(c.id)
               return (
@@ -274,7 +288,7 @@ export default function QuizScreen({
                     onChange={() => !s.checked && toggleMulti(c.id)}
                     style={{ marginTop: 3, flexShrink: 0 }} />
                   <span>
-                    <strong>{c.id}.</strong> {c.text}
+                    <strong>{label}.</strong> {c.text}
                     {s.checked && isCorrect && <span className="correct" style={{ marginLeft: 8 }}>✓</span>}
                   </span>
                 </label>

@@ -56,6 +56,27 @@ export default function EditModal({ question: initial, onSave, onClose }: Props)
           <input type="text" value={q.source_file} onChange={e => set('source_file', e.target.value)} />
         </div>
 
+        {q.diagram.present && q.diagram.image && (
+          <>
+            <hr />
+            <h3 style={{ marginBottom: 8 }}>Schemat</h3>
+            <div className="field">
+              <label>Ścieżka obrazu schematu (diagram.image.source)</label>
+              <input
+                type="text"
+                value={q.diagram.image.source}
+                onChange={e => setQ(prev => ({
+                  ...prev,
+                  diagram: {
+                    ...prev.diagram,
+                    image: { ...prev.diagram.image!, source: e.target.value },
+                  },
+                }))}
+              />
+            </div>
+          </>
+        )}
+
         <hr />
         <h3 style={{ marginBottom: 8 }}>Odpowiedź</h3>
 

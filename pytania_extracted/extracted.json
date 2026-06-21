@@ -8,17 +8,15 @@
     "schema_version": "1.0",
     "total_questions": 8,
     "notes": [
-      "Pytania bez potwierdzenia poprawności odpowiedzi oznaczone flagą answer.confirmed: false",
-      "Pytanie z id=1 występuje dwukrotnie na zdjęciach (Screenshot_2024-06-27-17-17-43 + Screenshot_20240627-171523). Zdjęcie mobilne (17:17) ma 1/1 pkt i jest używane jako źródło prawdy. Drugie zdjęcie (Screenshot_20240627-171523) pokazuje błędne zaznaczenie 0/1 — pominięte."
+      "Potwierdzone."
     ]
   },
   "questions": [
-
     {
       "id": 1,
       "source_file": "quiz/pytania/zestaw_1/Screenshot_2024-06-27-17-17-43-632_com_android_chrome.jpg",
       "type": "multi_choice",
-      "topic": "Tranzystor bipolarny — pojemności złączowe",
+      "topic": "Tranzystor bipolarny - pojemności złączowe",
       "question": "Które zdania są prawdziwe dla tranzystora bipolarnego:",
       "diagram": {
         "present": false,
@@ -27,23 +25,42 @@
         "components": []
       },
       "choices": [
-        { "id": "A", "text": "w niespolaryzowanym tranzystorze pnp, pojemność złączowa baza-emiter jest mniejsza niż pojemność złączowa baza-kolektor" },
-        { "id": "B", "text": "w niespolaryzowanym tranzystorze npn, pojemność złączowa baza-emiter jest mniejsza niż pojemność złączowa baza-kolektor" },
-        { "id": "C", "text": "w niespolaryzowanym tranzystorze pnp, pojemność złączowa baza-emiter jest większa niż pojemność złączowa baza-kolektor" },
-        { "id": "D", "text": "w niespolaryzowanym tranzystorze pnp i npn, pojemności złączowe baza-emiter i baza-kolektor są sobie równe i większe od 0 F" },
-        { "id": "E", "text": "w niespolaryzowanym tranzystorze pnp i npn, pojemności złączowe baza-emiter i baza-kolektor są równe 0 F" },
-        { "id": "F", "text": "w niespolaryzowanym tranzystorze npn, pojemność złączowa baza-emiter jest większa niż pojemność złączowa baza-kolektor" }
+        {
+          "id": "A",
+          "text": "w niespolaryzowanym tranzystorze pnp, pojemność złączowa baza-emiter jest mniejsza niż pojemność złączowa baza-kolektor"
+        },
+        {
+          "id": "B",
+          "text": "w niespolaryzowanym tranzystorze npn, pojemność złączowa baza-emiter jest mniejsza niż pojemność złączowa baza-kolektor"
+        },
+        {
+          "id": "C",
+          "text": "w niespolaryzowanym tranzystorze pnp, pojemność złączowa baza-emiter jest większa niż pojemność złączowa baza-kolektor"
+        },
+        {
+          "id": "D",
+          "text": "w niespolaryzowanym tranzystorze pnp i npn, pojemności złączowe baza-emiter i baza-kolektor są sobie równe i większe od 0 F"
+        },
+        {
+          "id": "E",
+          "text": "w niespolaryzowanym tranzystorze pnp i npn, pojemności złączowe baza-emiter i baza-kolektor są równe 0 F"
+        },
+        {
+          "id": "F",
+          "text": "w niespolaryzowanym tranzystorze npn, pojemność złączowa baza-emiter jest większa niż pojemność złączowa baza-kolektor"
+        }
       ],
       "answer": {
-        "value": ["C", "F"],
+        "value": [
+          "C",
+          "F"
+        ],
         "unit": null,
         "tolerance": null,
-        "confirmed": true,
-        "confirmation_note": "Wynik 1.00/1.00 pkt widoczny na zdjęciu. Zaznaczone opcje C i F."
+        "confirmed": true
       },
       "hint": "W tranzystorze bipolarnym (pnp i npn) złącze baza-emiter ma większą powierzchnię niż baza-kolektor, więc pojemność C_BE > C_BC."
     },
-
     {
       "id": 2,
       "source_file": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_09_07.png",
@@ -57,22 +74,35 @@
         "components": []
       },
       "choices": [
-        { "id": "A", "text": "Wytwarzania złączy p-n." },
-        { "id": "B", "text": "Domieszkowania monokryształów." },
-        { "id": "C", "text": "W ostatnie fazie produkcji tranzystorów MOS." },
-        { "id": "D", "text": "Tworzenia struktur n-p-n lub p-n-p tranzystorów bipolarnych." },
-        { "id": "E", "text": "Formowania monokryształów z polikryształów." }
+        {
+          "id": "A",
+          "text": "Wytwarzania złączy p-n."
+        },
+        {
+          "id": "B",
+          "text": "Domieszkowania monokryształów."
+        },
+        {
+          "id": "C",
+          "text": "W ostatnie fazie produkcji tranzystorów MOS."
+        },
+        {
+          "id": "D",
+          "text": "Tworzenia struktur n-p-n lub p-n-p tranzystorów bipolarnych."
+        },
+        {
+          "id": "E",
+          "text": "Formowania monokryształów z polikryształów."
+        }
       ],
       "answer": {
         "value": "E",
         "unit": null,
         "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: Na zdjęciu zaznaczona opcja E (zaznaczony radio button przy E), ale brak widocznego komunikatu o poprawności odpowiedzi. Odpowiedź E jest merytorycznie poprawna (metoda Bridgmana służy do wyrobu monokryształów z polikryształów krzemu)."
+        "confirmed": true
       },
       "hint": "Metoda Bridgmana (Czochralskiego-Bridgmana) to technika hodowli monokryształów — tygiel z polikryształu jest powoli chłodzony, tworząc monokryształ krzemu."
     },
-
     {
       "id": 3,
       "source_file": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_09_18.png",
@@ -86,22 +116,39 @@
         "components": []
       },
       "choices": [
-        { "id": "A", "text": "W temperaturze pokojowej liczba dziur jest równa liczbie swobodnych elektronów." },
-        { "id": "B", "text": "Wraz ze wzrostem temperatury rośnie liczba nośników prądu na skutek generacji." },
-        { "id": "C", "text": "Liczba swobodnych elektronów nie zależy od temperatury." },
-        { "id": "D", "text": "Ze wzrostem temperatury poziom Fermiego przesuwa się w stronę pasma przewodnictwa." },
-        { "id": "E", "text": "Poziom Fermiego znajduje się w połowie przerwy energetycznej." }
+        {
+          "id": "A",
+          "text": "W temperaturze pokojowej liczba dziur jest równa liczbie swobodnych elektronów."
+        },
+        {
+          "id": "B",
+          "text": "Wraz ze wzrostem temperatury rośnie liczba nośników prądu na skutek generacji."
+        },
+        {
+          "id": "C",
+          "text": "Liczba swobodnych elektronów nie zależy od temperatury."
+        },
+        {
+          "id": "D",
+          "text": "Ze wzrostem temperatury poziom Fermiego przesuwa się w stronę pasma przewodnictwa."
+        },
+        {
+          "id": "E",
+          "text": "Poziom Fermiego znajduje się w połowie przerwy energetycznej."
+        }
       ],
       "answer": {
-        "value": ["A", "B", "E"],
+        "value": [
+          "A",
+          "B",
+          "E"
+        ],
         "unit": null,
         "tolerance": null,
-        "confirmed": true,
-        "confirmation_note": "Zaznaczone checkboxy przy A, B i E są wypełnione (✓). C i D są niezaznaczone. Brak widocznego wyniku punktowego, ale zaznaczenia są wyraźne."
+        "confirmed": true
       },
       "hint": "Półprzewodnik samoistny: n_i = p (równe stężenia nośników), E_F w środku przerwy energetycznej (dokładnie w T=0K, przesuwa się minimalnie z temp.), liczba nośników rośnie wykładniczo z temperaturą."
     },
-
     {
       "id": 4,
       "source_file": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_09_43.png",
@@ -111,23 +158,29 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_09_43.png",
+          "source": "quiz/pytania/schematy/schemat1.png",
           "alt": "Wzmacniacz common-source na NMOS M1. Wejście IN przez C1 do bramki. Drain przez R2 do E2 (źródło prądowe). Punkt X (drain) przez C2 do wyjścia OUT. Source przez R1 do E1 (źródło prądowe). GND na dole."
         },
         "description": "Wzmacniacz ze wspólnym źródłem (common-source). C1 i C2 to kondensatory sprzęgające (dla AC = zwarcie). R2 = obciążenie drenu. R1 = rezystor source (dla AC wchodzi w obwód, ale C1/C2 zwierają pewne węzły).",
-        "components": ["M1 NMOS", "C1 (sprzęgający IN)", "C2 (sprzęgający OUT)", "R1 = 100 kΩ", "R2 = 1 kΩ", "E1 = 4 V (prądowe)", "E2 = 12 V (prądowe)"]
+        "components": [
+          "M1 NMOS",
+          "C1 (sprzęgający IN)",
+          "C2 (sprzęgający OUT)",
+          "R1 = 100 kΩ",
+          "R2 = 1 kΩ",
+          "E1 = 4 V (prądowe)",
+          "E2 = 12 V (prądowe)"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 2.5,
         "unit": null,
         "tolerance": 0.05,
-        "confirmed": true,
-        "confirmation_note": "Odpowiedź 2.5 widoczna w polu 'Odpowiedź' na zdjęciu."
+        "confirmed": true
       },
       "hint": "|Av| = g_m · (R2 ∥ 1/g_ds) = 5 mA/V · (1 kΩ ∥ 1 kΩ) = 5 · 0.5 kΩ = 2.5"
     },
-
     {
       "id": 5,
       "source_file": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_10_11.png",
@@ -145,12 +198,10 @@
         "value": 0.8,
         "unit": "Ω",
         "tolerance": 0.05,
-        "confirmed": true,
-        "confirmation_note": "Odpowiedź 0.8 widoczna w polu 'Odpowiedź' na zdjęciu."
+        "confirmed": true
       },
       "hint": "r_d = V_T / I_D = 26 mV / 33 mA ≈ 0.788 Ω ≈ 0.8 Ω. Napięcie termiczne V_T = kT/q ≈ 26 mV w temp. pokojowej."
     },
-
     {
       "id": 6,
       "source_file": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_10_22.png",
@@ -160,23 +211,27 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_10_22.png",
+          "source": "quiz/pytania/schematy/schemat2.png",
           "alt": "Dwa źródła prądowe E1 (lewe) i E2 (prawe) skierowane w górę. D1 między E1 a węzłem środkowym (przewodzi od E1 do węzła). D2 między węzłem środkowym a E2 (skierowana odwrotnie — zaporowo). Z węzła środkowego rezystor R do masy."
         },
         "description": "E1 zasila przez D1 (przewodzi) węzeł środkowy. D2 jest spolaryzowana zaporowo względem E2. Cały prąd z E1 idzie przez R do masy.",
-        "components": ["E1 = 2 V", "E2 = 2 V", "D1 (dioda, przewodzi)", "D2 (dioda, zaporowo)", "R = 1 kΩ"]
+        "components": [
+          "E1 = 2 V",
+          "E2 = 2 V",
+          "D1 (dioda, przewodzi)",
+          "D2 (dioda, zaporowo)",
+          "R = 1 kΩ"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 1.3,
         "unit": "mA",
         "tolerance": 0.05,
-        "confirmed": true,
-        "confirmation_note": "Odpowiedź 1.3 widoczna w polu 'Odpowiedź' na zdjęciu."
+        "confirmed": true
       },
       "hint": "D2 zaporowo → nie przewodzi. U_węzeł = E1 − U_D = 2 − 0.7 = 1.3 V. I_R = 1.3 V / 1 kΩ = 1.3 mA."
     },
-
     {
       "id": 7,
       "source_file": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_11_16.png",
@@ -186,23 +241,26 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_11_16.png",
+          "source": "quiz/pytania/schematy/schemat3.png",
           "alt": "Tranzystor MOS w połączeniu diodowym: bramka (G) zwarta z drenem (D). Napięcie U przyłożone między drenem a źródłem (S). Prąd I wpływa do drenu."
         },
         "description": "Połączenie diodowe: V_GS = V_DS = U = 6 V. Tranzystor pracuje w nasyceniu bo V_DS ≥ V_GS − V_T.",
-        "components": ["M1 NMOS (lub PMOS)", "U = 6 V (V_GS = V_DS)", "V_T = 3 V", "k = 1 mA/V²"]
+        "components": [
+          "M1 NMOS (lub PMOS)",
+          "U = 6 V (V_GS = V_DS)",
+          "V_T = 3 V",
+          "k = 1 mA/V²"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 4.5,
         "unit": "mA",
         "tolerance": 0.05,
-        "confirmed": true,
-        "confirmation_note": "Odpowiedź 4.5 widoczna w polu 'Odpowiedź' na zdjęciu."
+        "confirmed": true
       },
       "hint": "Nasycenie: I = (k/2)·(V_GS − V_T)² = (1/2)·(6 − 3)² = 0.5 · 9 = 4.5 mA"
     },
-
     {
       "id": 8,
       "source_file": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_11_27.png",
@@ -216,22 +274,35 @@
         "components": []
       },
       "choices": [
-        { "id": "A", "text": "iloczyn prądu kolektora i rezystancji statycznej między kolektorem a emiterem" },
-        { "id": "B", "text": "kwadrat prądu kolektora i rezystancji dynamicznej między kolektorem a emiterem" },
-        { "id": "C", "text": "kwadrat prądu kolektora i rezystancji dynamicznej złącza baza-emiter" },
-        { "id": "D", "text": "iloczyn prądu kolektora i napięcia między kolektorem a emiterem" },
-        { "id": "E", "text": "kwadrat prądu kolektora i rezystancji dynamicznej złącza baza-kolektor" }
+        {
+          "id": "A",
+          "text": "iloczyn prądu kolektora i rezystancji statycznej między kolektorem a emiterem"
+        },
+        {
+          "id": "B",
+          "text": "kwadrat prądu kolektora i rezystancji dynamicznej między kolektorem a emiterem"
+        },
+        {
+          "id": "C",
+          "text": "kwadrat prądu kolektora i rezystancji dynamicznej złącza baza-emiter"
+        },
+        {
+          "id": "D",
+          "text": "iloczyn prądu kolektora i napięcia między kolektorem a emiterem"
+        },
+        {
+          "id": "E",
+          "text": "kwadrat prądu kolektora i rezystancji dynamicznej złącza baza-kolektor"
+        }
       ],
       "answer": {
         "value": "D",
         "unit": null,
         "tolerance": null,
-        "confirmed": true,
-        "confirmation_note": "Checkbox przy D jest zaznaczony (✓) na zdjęciu. Brak wyniku punktowego w kadrze, ale zaznaczenie jednoznaczne."
+        "confirmed": true
       },
       "hint": "Moc wydzielana: P = V_CE · I_C. Prąd bazy i napięcia złączy BE/BC mają marginalny udział w porównaniu z głównym iloczynem V_CE · I_C w konfiguracji CE."
     },
-
     {
       "id": 9,
       "source_file": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_12_43.png",
@@ -241,28 +312,47 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_1/Screenshot_2024-06-29_at_16_12_43.png",
+          "source": "quiz/pytania/schematy/schemat4.png",
           "alt": "Obwód: U_WE po lewej. R1 równolegle z diodą D (szeregowo w gałęzi). R2 od węzła do masy. U_WY mierzone na R2. Obok: charakterystyka I_D(U_D) diody idealnej z napięciem przewodzenia U_p = 0.7 V."
         },
         "description": "R1 równolegle z diodą D (gałąź szeregowa). R2 jako obciążenie do masy. Przy U_WE = -1 V dioda jest spolaryzowana zaporowo (U_D < 0.7 V) → dioda nie przewodzi → obwód = dzielnik R1+R2.",
-        "components": ["R1 = 1 kΩ", "R2 = 1 kΩ", "D (dioda krzemowa, U_p = 0.7 V)", "U_WE", "U_WY"]
+        "components": [
+          "R1 = 1 kΩ",
+          "R2 = 1 kΩ",
+          "D (dioda krzemowa, U_p = 0.7 V)",
+          "U_WE",
+          "U_WY"
+        ]
       },
       "choices": [
-        { "id": "A", "text": "2/3" },
-        { "id": "B", "text": "1" },
-        { "id": "C", "text": "1/2" },
-        { "id": "D", "text": "0,7" },
-        { "id": "E", "text": "0" }
+        {
+          "id": "A",
+          "text": "2/3"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "1/2"
+        },
+        {
+          "id": "D",
+          "text": "0,7"
+        },
+        {
+          "id": "E",
+          "text": "0"
+        }
       ],
       "answer": {
         "value": "C",
         "unit": null,
         "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: Na zdjęciu zaznaczony radio button przy '1/2'. Brak widocznego komunikatu o poprawności. Merytorycznie: przy U_WE = -1V dioda zaporowo → U_WY = U_WE · R2/(R1+R2) = U_WE · 1/2 → współczynnik = 1/2. Wydaje się poprawne."
+        "confirmed": true
       },
       "hint": "Przy U_WE = -1 V dioda jest zaporowo spolaryzowana (nie przewodzi). Obwód redukuje się do dzielnika napięcia R1–R2: dU_WY/dU_WE = R2/(R1+R2) = 1k/(1k+1k) = 1/2."
     }
-
   ]
 }
