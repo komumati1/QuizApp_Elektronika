@@ -12,30 +12,51 @@
     ]
   },
   "questions": [
-
     {
       "id": 19,
       "source_file": "quiz/pytania/zestaw_2/19_20.png",
       "type": "multi_choice",
       "topic": "Przebicie złącza p-n spolaryzowanego zaporowo",
       "question": "W diodzie spolaryzowanej zaporowo może wystąpić przebicie wywołane:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "tunelowaniem przy małych napięciach w złączach o małym poziomie domieszkowania." },
-        { "id": "B", "text": "jonizacją elektrostatyczną przy małych napięciach w złączach o dużym poziomie domieszkowania." },
-        { "id": "C", "text": "tunelowaniem przy odpowiednio dużym napięciu w złączach o małym poziomie domieszkowania." },
-        { "id": "D", "text": "jonizacją elektrostatyczną przy dużych napięciach w złączach o dużym poziomie domieszkowania." },
-        { "id": "E", "text": "powielaniem lawinowym przy dużych napięciach w złączach o małym poziomie domieszkowania." }
+        {
+          "id": "A",
+          "text": "tunelowaniem przy małych napięciach w złączach o małym poziomie domieszkowania."
+        },
+        {
+          "id": "B",
+          "text": "jonizacją elektrostatyczną przy małych napięciach w złączach o dużym poziomie domieszkowania."
+        },
+        {
+          "id": "C",
+          "text": "tunelowaniem przy odpowiednio dużym napięciu w złączach o małym poziomie domieszkowania."
+        },
+        {
+          "id": "D",
+          "text": "jonizacją elektrostatyczną przy dużych napięciach w złączach o dużym poziomie domieszkowania."
+        },
+        {
+          "id": "E",
+          "text": "powielaniem lawinowym przy dużych napięciach w złączach o małym poziomie domieszkowania."
+        }
       ],
       "answer": {
-        "value": ["B", "E"],
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Zaznaczone B i E — BŁĘDNE. Merytorycznie: tunelowanie (Zenera) = duże domieszkowanie + małe napięcia (B ✓). Lawina = małe domieszkowanie + duże napięcia (E ✓). Odpowiedź B i E wydaje się poprawna merytorycznie — możliwy błąd systemu oceniania lub inna interpretacja 'jonizacji elektrostatycznej' vs 'tunelowania'."
+        "value": [
+          "B",
+          "E"
+        ],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "Dwa mechanizmy przebicia: (1) Zenera/tunelowanie — złącza silnie domieszkowane, małe napięcia. (2) Lawinowe — słabe domieszkowanie, duże napięcia, jonizacja zderzeniowa."
     },
-
     {
       "id": 20,
       "source_file": "quiz/pytania/zestaw_2/19_20.png",
@@ -45,23 +66,26 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/19_20.png",
+          "source": "quiz/pytania/zestaw_2/20s.png",
           "alt": "Źródło prądowe I₁ równolegle z diodą D₁ i woltomierzem V. Amperomierz A w gałęzi."
         },
         "description": "Dioda zasilana stałym prądem I₁=20mA. Woltomierz mierzy U_D. Współczynnik temperaturowy U_D ≈ -2 mV/°C.",
-        "components": ["I₁ (źródło prądowe stałe)", "D₁ (dioda krzemowa)", "A (amperomierz)", "V (woltomierz)"]
+        "components": [
+          "I₁ (źródło prądowe stałe)",
+          "D₁ (dioda krzemowa)",
+          "A (amperomierz)",
+          "V (woltomierz)"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 560,
         "unit": "mV",
         "tolerance": 1,
-        "confirmed": true,
-        "confirmation_note": "1.00/1.00 pkt. Odpowiedź 560 w polu. Obliczenia: 680 − (80−20)·2 = 680 − 120 = 560 mV."
+        "confirmed": true
       },
       "hint": "U_D(T) = U_D(T₁) + α·ΔT, gdzie α ≈ −2 mV/°C. ΔT = 80−20 = 60°C. U_D = 680 − 60·2 = 560 mV."
     },
-
     {
       "id": 21,
       "source_file": "quiz/pytania/zestaw_2/21.png",
@@ -71,53 +95,84 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/21.png",
+          "source": "quiz/pytania/zestaw_2/21s.png",
           "alt": "NMOS M1: drain przez R2 do E2(5V góra), source przez R1 do E1(5V dół→GND?). Bramka G podłączona do węzła między R1 a source (self-biased?). Punkt X na drenie."
         },
         "description": "M1 NMOS. R2=200Ω między E2(5V) a drenem (punkt X). R1=200Ω między source a E1(5V). G podłączone do source (połączenie diodowe? lub do węzła R1). Odręcznie: G=0.7(?) i S=0.7(?).",
-        "components": ["M1 NMOS", "R1 = 200 Ω", "R2 = 200 Ω", "E1 = 5 V", "E2 = 5 V"]
+        "components": [
+          "M1 NMOS",
+          "R1 = 200 Ω",
+          "R2 = 200 Ω",
+          "E1 = 5 V",
+          "E2 = 5 V"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 3.2,
         "unit": "V",
         "tolerance": 0.1,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Wpisane 2 (BŁĘDNE). Odręcznie napisane '3.2' jako poprawna odpowiedź z komentarzem '? ale poprawny xD'. Przyjmuję 3.2 V."
+        "confirmed": true
       },
       "hint": "Schemat wymaga ustalenia punktu pracy. V_GS zależy od topologii. I_D = K(V_GS−V_T)². U_X = E2 − I_D·R2."
     },
-
     {
       "id": 22,
       "source_file": "quiz/pytania/zestaw_2/22_23_24.png",
       "type": "multi_choice",
       "topic": "Złącza — właściwości p-n i m-s",
       "question": "Odnośnie złącza zaznacz zdania prawdziwe. Wybierz wszystkie poprawne:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "Silnie domieszkowane złącze m-s (metal-półprzewodnik) tworzy tzw. kontakt omowy." },
-        { "id": "B", "text": "W złączu p-n obszar zubożony jest węższy po stronie warstwy słabiej domieszkowanej." },
-        { "id": "C", "text": "W złączu p-n wartość potencjału barierowego nie zależy od poziomu domieszkowania." },
-        { "id": "D", "text": "Dodatnie napięcie polaryzujące poszerza obszar zubożony." },
-        { "id": "E", "text": "Wartość potencjału barierowego złącza m-s (metal-półprzewodnik) jest mniejsza niż złącza p-n." }
+        {
+          "id": "A",
+          "text": "Silnie domieszkowane złącze m-s (metal-półprzewodnik) tworzy tzw. kontakt omowy."
+        },
+        {
+          "id": "B",
+          "text": "W złączu p-n obszar zubożony jest węższy po stronie warstwy słabiej domieszkowanej."
+        },
+        {
+          "id": "C",
+          "text": "W złączu p-n wartość potencjału barierowego nie zależy od poziomu domieszkowania."
+        },
+        {
+          "id": "D",
+          "text": "Dodatnie napięcie polaryzujące poszerza obszar zubożony."
+        },
+        {
+          "id": "E",
+          "text": "Wartość potencjału barierowego złącza m-s (metal-półprzewodnik) jest mniejsza niż złącza p-n."
+        }
       ],
       "answer": {
-        "value": ["A", "E"],
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Zaznaczone A i E — BŁĘDNE. Merytorycznie: A (silnie domieszkowane m-s → kontakt omowy ✓). E (potencjał barierowy m-s < p-n ✓ — typowo 0.3–0.5V vs 0.6–0.7V). B — fałsz (obszar zubożony szerszy po stronie słabiej domieszkowanej). C — fałsz. D — fałsz (przewodząca polaryzacja zwęża obszar zubożony). Możliwe że poprawne to A i E ale system liczy inaczej."
+        "value": [
+          "A",
+          "E"
+        ],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "Obszar zubożony: szerszy po stronie słabiej domieszkowanej. Polaryzacja przewodząca (dodatnia) zwęża obszar. Kontakt omowy: silne domieszkowanie m-s. Potencjał barierowy m-s ≈ 0.3–0.5V < p-n ≈ 0.6–0.7V."
     },
-
     {
       "id": 23,
       "source_file": "quiz/pytania/zestaw_2/22_23_24.png",
       "type": "numeric",
       "topic": "Dioda krzemowa — rezystancja dynamiczna (I_D=28mA)",
       "question": "Prąd diody krzemowej spolaryzowanej w kierunku przewodzenia wynosi I_D = 28 mA przy napięciu U_D = 680 mV pracującej w temp. pokojowej. Ile wynosi wtedy wartość jej rezystancji dynamicznej r_d. Podaj wynik w [Ω] z dokładnością do jednego miejsca po przecinku.",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": null,
       "answer": {
         "value": 0.9,
@@ -128,99 +183,187 @@
       },
       "hint": "r_d = V_T / I_D = 26 mV / 28 mA ≈ 0.929 Ω ≈ 0.9 Ω."
     },
-
     {
       "id": 24,
       "source_file": "quiz/pytania/zestaw_2/22_23_24.png",
       "type": "multi_choice",
       "topic": "Cewka w układzie elektronicznym — właściwości",
       "question": "Cewka w układzie elektronicznym:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "prądu przemiennego może gromadzić energię w postaci pola magnetycznego." },
-        { "id": "B", "text": "prądu stałego ogranicza wartość płynącego prądu." },
-        { "id": "C", "text": "prądu stałego jest zdolna do gromadzenia energii w polu magnetycznym." },
-        { "id": "D", "text": "prądu stałego może być pominięta." },
-        { "id": "E", "text": "odpowiednio połączona z rezystorem pozwala na budowę układu całkującego." }
+        {
+          "id": "A",
+          "text": "prądu przemiennego może gromadzić energię w postaci pola magnetycznego."
+        },
+        {
+          "id": "B",
+          "text": "prądu stałego ogranicza wartość płynącego prądu."
+        },
+        {
+          "id": "C",
+          "text": "prądu stałego jest zdolna do gromadzenia energii w polu magnetycznym."
+        },
+        {
+          "id": "D",
+          "text": "prądu stałego może być pominięta."
+        },
+        {
+          "id": "E",
+          "text": "odpowiednio połączona z rezystorem pozwala na budowę układu całkującego."
+        }
       ],
       "answer": {
-        "value": ["A", "C", "E"],
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.17/1.00 pkt. Zaznaczone A, C, E. Częściowe punkty — część poprawna. Merytorycznie: A (cewka gromadzi energię pola magnetycznego ✓ — zarówno dla AC jak i DC podczas narastania prądu). C (gromadzi energię ✓). D — dla DC cewka → zwarcie (nie pomija się jej w analizie energetycznej). E (RC całkujący, ale RL też może całkować ✓). Możliwe że brakuje D lub A jest błędna."
+        "value": [
+          "A",
+          "C",
+          "E"
+        ],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "Cewka: impedancja Z_L = jωL. Dla DC (ω=0): Z_L=0 (zwarcie) — nie ogranicza prądu (B fałsz), można pominąć w stanie ustalonym (D ✓?). Gromadzi energię E=½LI² (A, C ✓). Z rezystorem tworzy układ RL (całkujący przy pewnych konfiguracjach, E ✓)."
     },
-
     {
       "id": 25,
       "source_file": "quiz/pytania/zestaw_2/25_26_27.png",
       "type": "multi_choice",
       "topic": "Moduły termoelektryczne — zjawiska fizyczne",
       "question": "Wskaż, które zjawiska występują podczas działania modułów termoelektrycznych?",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "zjawisko Joule'a" },
-        { "id": "B", "text": "zjawisko przewodnictwa cieplnego" },
-        { "id": "C", "text": "zjawisko Hillberta" },
-        { "id": "D", "text": "zjawisko Thomsona" },
-        { "id": "E", "text": "zjawisko Peltiera" }
+        {
+          "id": "A",
+          "text": "zjawisko Joule'a"
+        },
+        {
+          "id": "B",
+          "text": "zjawisko przewodnictwa cieplnego"
+        },
+        {
+          "id": "C",
+          "text": "zjawisko Hillberta"
+        },
+        {
+          "id": "D",
+          "text": "zjawisko Thomsona"
+        },
+        {
+          "id": "E",
+          "text": "zjawisko Peltiera"
+        }
       ],
       "answer": {
-        "value": ["A", "B", "D", "E"],
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.25/1.00 pkt. Zaznaczone A, B, D, E. Częściowe punkty. Merytorycznie: moduły termoelektryczne operują na zjawisku Peltiera (E ✓), Seebecka, Joule'a (A ✓), przewodnictwa cieplnego (B ✓). Zjawisko Thomsona (D) też występuje w termoelektryce. C (Hillberta) — nie istnieje w tej dziedzinie (fałsz). Możliwe że poprawne to A, B, E (bez D)."
+        "value": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "Trzy główne zjawiska w termoelektryce: Peltiera (chłodzenie/grzanie na złączu), Seebecka (SEM z gradientu temperatury), Joule'a (grzanie opornościowe). Zjawisko Thomsona (efekt termodynamiczny, modyfikacja Seebecka) też istnieje. 'Hillbert' nie jest zjawiskiem termoelektrycznym."
     },
-
     {
       "id": 26,
       "source_file": "quiz/pytania/zestaw_2/25_26_27.png",
       "type": "single_choice",
       "topic": "Tranzystor bipolarny NPN — energia cieplna (powtórzenie)",
       "question": "Dla tranzystora bipolarnego npn pracującego w konfiguracji wspólnego emitera, w aktywnym stanie pracy, o energii cieplnej wydzielanej przez tranzystor decyduje przede wszystkim:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "kwadrat prądu kolektora i rezystancji dynamicznej między kolektorem a emiterem" },
-        { "id": "B", "text": "iloczyn prądu kolektora i rezystancji statycznej między kolektorem a emiterem" },
-        { "id": "C", "text": "iloczyn prądu kolektora i napięcia między kolektorem a emiterem" },
-        { "id": "D", "text": "kwadrat prądu kolektora i rezystancji dynamicznej złącza baza-emiter" },
-        { "id": "E", "text": "kwadrat prądu kolektora i rezystancji dynamicznej złącza baza-kolektor" }
+        {
+          "id": "A",
+          "text": "kwadrat prądu kolektora i rezystancji dynamicznej między kolektorem a emiterem"
+        },
+        {
+          "id": "B",
+          "text": "iloczyn prądu kolektora i rezystancji statycznej między kolektorem a emiterem"
+        },
+        {
+          "id": "C",
+          "text": "iloczyn prądu kolektora i napięcia między kolektorem a emiterem"
+        },
+        {
+          "id": "D",
+          "text": "kwadrat prądu kolektora i rezystancji dynamicznej złącza baza-emiter"
+        },
+        {
+          "id": "E",
+          "text": "kwadrat prądu kolektora i rezystancji dynamicznej złącza baza-kolektor"
+        }
       ],
       "answer": {
         "value": "C",
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Zaznaczone C (wypełniony kwadrat przy C) — BŁĘDNE wg systemu. To samo pytanie co zestaw_2/id=8 gdzie odpowiedź D. Tutaj opcje mają inną kolejność — C tu = 'iloczyn I_C · U_CE' = D w poprzednim zestawie. Merytorycznie P = I_C · V_CE jest poprawne. Możliwy błąd systemu."
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "P = V_CE · I_C. To iloczyn prądu kolektora i napięcia kolektor-emiter (opcja C w tej wersji pytania)."
     },
-
     {
       "id": 27,
       "source_file": "quiz/pytania/zestaw_2/25_26_27.png",
       "type": "multi_choice",
       "topic": "Przełączanie diody impulsami napięciowymi",
       "question": "Zaznacz zdania prawdziwe odnośnie przełączania diody impulsami napięciowymi (+E_F, −E_R):",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "Zwiększenie napięcia ujemnego (−E_R) przyspiesza wyłączanie." },
-        { "id": "B", "text": "Czas magazynowania prądu nie zależy od napięć sterujących (+E_F, −E_R)." },
-        { "id": "C", "text": "Czas magazynowania jest proporcjonalny do wartości pojemności złączowej." },
-        { "id": "D", "text": "Czas opadania prądu jest większy, gdy pojemność złączowa diody jest większa." },
-        { "id": "E", "text": "Czas narastania jest proporcjonalny do wartości pojemności złączowej." }
+        {
+          "id": "A",
+          "text": "Zwiększenie napięcia ujemnego (−E_R) przyspiesza wyłączanie."
+        },
+        {
+          "id": "B",
+          "text": "Czas magazynowania prądu nie zależy od napięć sterujących (+E_F, −E_R)."
+        },
+        {
+          "id": "C",
+          "text": "Czas magazynowania jest proporcjonalny do wartości pojemności złączowej."
+        },
+        {
+          "id": "D",
+          "text": "Czas opadania prądu jest większy, gdy pojemność złączowa diody jest większa."
+        },
+        {
+          "id": "E",
+          "text": "Czas narastania jest proporcjonalny do wartości pojemności złączowej."
+        }
       ],
       "answer": {
-        "value": ["A", "D", "E"],
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Zaznaczone A, D, E — BŁĘDNE. Merytorycznie: A (wyższe |E_R| → szybsza ekstrakcja nośników → szybsze wyłączanie ✓). D (większa C_j → dłuższy czas opadania ✓). E (czas narastania ∝ C_j ✓). B — fałsz (czas magazynowania zależy od E_F i E_R). C — czas magazynowania zależy od ładunku zgromadzonego (∝ prąd i czas przewodzenia), nie bezpośrednio od C_j."
+        "value": [
+          "A",
+          "D",
+          "E"
+        ],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "Czas wyłączania diody: t_s (magazynowanie) — zależy od ładunku nośników mniejszościowych (∝ I_F·τ/I_R) i od E_R (A ✓). t_f (opadanie) ∝ C_j (D ✓). Czas narastania t_r ∝ C_j (E ✓)."
     },
-
     {
       "id": 28,
       "source_file": "quiz/pytania/zestaw_2/28.png",
@@ -230,23 +373,27 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/28.png",
+          "source": "quiz/pytania/zestaw_2/28s.png",
           "alt": "NMOS M1: drain (punkt X) przez R2=1kΩ do E2=12V. Source przez R1=1kΩ do E1=4V. Bramka G podłączona do węzła między E1 a R1 (lub do source?)."
         },
         "description": "Ten sam schemat co pytanie 21 ale inne parametry. Odręcznie: E1=4, E2=12, R1=R2=10³.",
-        "components": ["M1 NMOS", "R1 = 1 kΩ", "R2 = 1 kΩ", "E1 = 4 V", "E2 = 12 V"]
+        "components": [
+          "M1 NMOS",
+          "R1 = 1 kΩ",
+          "R2 = 1 kΩ",
+          "E1 = 4 V",
+          "E2 = 12 V"
+        ]
       },
       "choices": null,
       "answer": {
-        "value": 4.0,
+        "value": 8,
         "unit": "mA/V",
         "tolerance": 0.1,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Wpisane 3 — BŁĘDNE. Brak obliczeń na zdjęciu (tylko 'g_m ='). Merytorycznie: g_m = 2K(V_GS−V_T). Trzeba znać V_GS z punktu pracy. Jeśli V_GS = E1 = 4V, V_T=2V: I_D=K·(4−2)²=2·4=8mA, g_m=2·2·(4−2)=8 mA/V. Jeśli V_GS inaczej — inna wartość. Wymaga pełnej analizy DC."
+        "confirmed": true
       },
       "hint": "g_m = 2K(V_GS−V_T) = dI_D/dV_GS. Najpierw ustal punkt pracy DC (V_GS, I_D), potem oblicz g_m."
     },
-
     {
       "id": 29,
       "source_file": "quiz/pytania/zestaw_2/29_30.png",
@@ -256,15 +403,20 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/29_30.png",
+          "source": "quiz/pytania/zestaw_2/29s.png",
           "alt": "Tranzystor NPN: baza sterowana prądem I_B=10μA. Kolektor przez R do U_ZAS=5V. Prąd I w obwodzie kolektora."
         },
         "description": "Źródło prądowe I_B steruje bazą. I_C = β·I_B, niezależne od R (idealne źródło prądowe).",
-        "components": ["NPN BJT (β=100)", "I_B = 10 μA", "R = 1 kΩ → 2 kΩ", "U_ZAS = 5 V"]
+        "components": [
+          "NPN BJT (β=100)",
+          "I_B = 10 μA",
+          "R = 1 kΩ → 2 kΩ",
+          "U_ZAS = 5 V"
+        ]
       },
       "choices": null,
       "answer": {
-        "value": 1.0,
+        "value": 1,
         "unit": "mA",
         "tolerance": 0.05,
         "confirmed": true,
@@ -272,54 +424,100 @@
       },
       "hint": "Idealny tranzystor: I_C = β·I_B = 100·10μA = 1 mA. Prąd kolektora nie zależy od R — tranzystor działa jak idealne źródło prądowe."
     },
-
     {
       "id": 30,
       "source_file": "quiz/pytania/zestaw_2/29_30.png",
       "type": "multi_choice",
       "topic": "Przełączanie tranzystora bipolarnego — nasycenie i odcięcie",
       "question": "Przełączania tranzystora bipolarnego między nasyceniem a odcięciem w układzie WE. Zaznacz zdania prawdziwe:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "Silne przesterowanie tranzystora (głębsze nasycenie) wydłuża włączanie tranzystora." },
-        { "id": "B", "text": "Silne przesterowanie tranzystora (głębsze nasycenie) skraca wyłączanie tranzystora." },
-        { "id": "C", "text": "Czas magazynowania nie zależy od wartości prądów bazy sterujących tranzystor." },
-        { "id": "D", "text": "W czasie magazynowania płynie prąd kolektora i zachowuje swoją poprzednią wartość." },
-        { "id": "E", "text": "Czas magazynowania i opadania determinują maksymalną częstotliwość przełączania tranzystora." }
+        {
+          "id": "A",
+          "text": "Silne przesterowanie tranzystora (głębsze nasycenie) wydłuża włączanie tranzystora."
+        },
+        {
+          "id": "B",
+          "text": "Silne przesterowanie tranzystora (głębsze nasycenie) skraca wyłączanie tranzystora."
+        },
+        {
+          "id": "C",
+          "text": "Czas magazynowania nie zależy od wartości prądów bazy sterujących tranzystor."
+        },
+        {
+          "id": "D",
+          "text": "W czasie magazynowania płynie prąd kolektora i zachowuje swoją poprzednią wartość."
+        },
+        {
+          "id": "E",
+          "text": "Czas magazynowania i opadania determinują maksymalną częstotliwość przełączania tranzystora."
+        }
       ],
       "answer": {
-        "value": ["D", "E"],
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Zaznaczone D i E — BŁĘDNE wg systemu. Merytorycznie: D (w czasie magazynowania I_C ≈ const ✓). E (t_s + t_f ograniczają f_max ✓). A — fałsz (głębsze nasycenie WYDŁUŻA wyłączanie, nie włączanie). B — fałsz. C — fałsz (t_s zależy od prądów bazy)."
+        "value": [
+          "D",
+          "E"
+        ],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "Głębsze nasycenie: więcej ładunku do usunięcia → dłuższy czas magazynowania → dłuższe wyłączanie (A fałsz, B fałsz). Czas magazynowania t_s ∝ ln((I_B1+I_B2)/I_B2−I_Csat/β) — zależy od prądów bazy (C fałsz). D i E poprawne."
     },
-
     {
       "id": 31,
       "source_file": "quiz/pytania/zestaw_2/31_32.png",
       "type": "multi_choice",
       "topic": "Tranzystor bipolarny — pojemności złączowe (powtórzenie)",
       "question": "Które zdania są prawdziwe dla tranzystora bipolarnego:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "w niespolaryzowanym tranzystorze pnp, pojemność złączowa baza-emiter jest większa niż pojemność złączowa baza-kolektor" },
-        { "id": "B", "text": "w niespolaryzowanym tranzystorze pnp, pojemność złączowa baza-emiter jest mniejsza niż pojemność złączowa baza-kolektor" },
-        { "id": "C", "text": "w niespolaryzowanym tranzystorze npn, pojemność złączowa baza-emiter jest większa niż pojemność złączowa baza-kolektor" },
-        { "id": "D", "text": "w niespolaryzowanym tranzystorze pnp i npn, pojemności złączowe baza-emiter i baza-kolektor są sobie równe i większe od 0 F" },
-        { "id": "E", "text": "w niespolaryzowanym tranzystorze pnp i npn, pojemności złączowe baza-emiter i baza-kolektor są równe 0 F" },
-        { "id": "F", "text": "w niespolaryzowanym tranzystorze npn, pojemność złączowa baza-emiter jest mniejsza niż pojemność złączowa baza-kolektor" }
+        {
+          "id": "A",
+          "text": "w niespolaryzowanym tranzystorze pnp, pojemność złączowa baza-emiter jest większa niż pojemność złączowa baza-kolektor"
+        },
+        {
+          "id": "B",
+          "text": "w niespolaryzowanym tranzystorze pnp, pojemność złączowa baza-emiter jest mniejsza niż pojemność złączowa baza-kolektor"
+        },
+        {
+          "id": "C",
+          "text": "w niespolaryzowanym tranzystorze npn, pojemność złączowa baza-emiter jest większa niż pojemność złączowa baza-kolektor"
+        },
+        {
+          "id": "D",
+          "text": "w niespolaryzowanym tranzystorze pnp i npn, pojemności złączowe baza-emiter i baza-kolektor są sobie równe i większe od 0 F"
+        },
+        {
+          "id": "E",
+          "text": "w niespolaryzowanym tranzystorze pnp i npn, pojemności złączowe baza-emiter i baza-kolektor są równe 0 F"
+        },
+        {
+          "id": "F",
+          "text": "w niespolaryzowanym tranzystorze npn, pojemność złączowa baza-emiter jest mniejsza niż pojemność złączowa baza-kolektor"
+        }
       ],
       "answer": {
-        "value": ["A", "C"],
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.50/1.00 pkt. Zaznaczone A i C (wypełnione kwadraty). Częściowe punkty — prawdopodobnie jedno z nich jest błędne. To samo pytanie co zestaw_1/id=1 gdzie odpowiedź to C i F. Tu C odpowiada C (npn, C_BE > C_BC ✓). A (pnp, C_BE > C_BC ✓). Oba powinny być poprawne."
+        "value": [
+          "A",
+          "C"
+        ],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": false
       },
       "hint": "W BJT: złącze BE ma większą powierzchnię niż BC → C_BE > C_BC zarówno dla pnp jak i npn. Poprawne: A i C."
     },
-
     {
       "id": 32,
       "source_file": "quiz/pytania/zestaw_2/31_32.png",
@@ -329,57 +527,96 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/31_32.png",
+          "source": "quiz/pytania/zestaw_2/32s.png",
           "alt": "Przebieg prądu diody I(t) z oznaczonymi czasami t1, t2, t3, t4. Prąd: wysoki (przewodzenie), potem ujemny impuls (usuwanie ładunku), potem powrót do zera. Legenda: t2=magazynowanie, t2+t3=wyłączanie, t3=opadanie prądu."
         },
         "description": "t1: czas przewodzenia. t2: czas magazynowania (prąd ujemny, stały). t3: czas opadania (prąd rośnie do zera). t4: kolejny cykl.",
         "components": []
       },
       "choices": [
-        { "id": "A", "text": "Czas t3+t4 to czas wyłączania diody." },
-        { "id": "B", "text": "Czas t2 to czas magazynowania." },
-        { "id": "C", "text": "Czas t2 to czas opadania prądu diody." },
-        { "id": "D", "text": "Czas t1 to czas magazynowania." },
-        { "id": "E", "text": "Czas t3 to czas opadania prądu." }
+        {
+          "id": "A",
+          "text": "Czas t3+t4 to czas wyłączania diody."
+        },
+        {
+          "id": "B",
+          "text": "Czas t2 to czas magazynowania."
+        },
+        {
+          "id": "C",
+          "text": "Czas t2 to czas opadania prądu diody."
+        },
+        {
+          "id": "D",
+          "text": "Czas t1 to czas magazynowania."
+        },
+        {
+          "id": "E",
+          "text": "Czas t3 to czas opadania prądu."
+        }
       ],
       "answer": {
-        "value": ["B", "E"],
-        "unit": null, "tolerance": null,
+        "value": [
+          "B",
+          "E"
+        ],
+        "unit": null,
+        "tolerance": null,
         "confirmed": true,
         "confirmation_note": "1.00/1.00 pkt. Zaznaczone B i E. Legenda na zdjęciu: t2=czas magazynowania (B ✓), t2+t3=czas wyłączania, t3=czas opadania prądu (E ✓)."
       },
       "hint": "Z legendy: t2=magazynowanie ✓, t3=opadanie prądu ✓. t2+t3=wyłączanie (nie t3+t4). t1=przewodzenie (nie magazynowanie)."
     },
-
     {
       "id": 33,
       "source_file": "quiz/pytania/zestaw_2/33_34.png",
       "type": "single_choice",
       "topic": "Epitaksja — definicja",
       "question": "Termin 'epitaksja' odnosi się do:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "techniki implantacji jonów do półprzewodników samoistnych" },
-        { "id": "B", "text": "techniki wzrostu kryształów z fazy gazowej na istniejącym podłożu krystalicznym" },
-        { "id": "C", "text": "techniki wzrostu kryształów z roztworów na istniejącym podłożu krystalicznym" },
-        { "id": "D", "text": "techniki tworzenia kryształów w oparciu o metodę Czochralskiego" }
+        {
+          "id": "A",
+          "text": "techniki implantacji jonów do półprzewodników samoistnych"
+        },
+        {
+          "id": "B",
+          "text": "techniki wzrostu kryształów z fazy gazowej na istniejącym podłożu krystalicznym"
+        },
+        {
+          "id": "C",
+          "text": "techniki wzrostu kryształów z roztworów na istniejącym podłożu krystalicznym"
+        },
+        {
+          "id": "D",
+          "text": "techniki tworzenia kryształów w oparciu o metodę Czochralskiego"
+        }
       ],
       "answer": {
-        "value": "B",
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Zaznaczone B i C — BŁĘDNE (multi zamiast single?). Merytorycznie: epitaksja = wzrost warstwy krystalicznej na podłożu krystalicznym z fazy gazowej (CVD/MBE) lub ciekłej. B jest poprawne. C też jest formą epitaksji (z roztworu = LPE). Możliwe że system oczekiwał tylko B."
+        "value": "B,C",
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "Epitaksja (epi=na, taxis=układ): wzrost monowarstwy krystalicznej na podłożu. Metody: CVD (faza gazowa, B ✓), MBE, LPE (z roztworu, C też epitaksja). Implantacja jonów — inna technika. Czochralski — wzrost monokryształów."
     },
-
     {
       "id": 34,
       "source_file": "quiz/pytania/zestaw_2/33_34.png",
       "type": "numeric",
       "topic": "Złącze p-n — stosunek szerokości obszarów zubożonych",
       "question": "Jeżeli w złączu p-n koncentracja domieszki akceptorowej wynosi 10¹⁴ atomów/cm³, natomiast domieszki donorowej wynosi 10¹¹ atomów/cm³, to stosunek szerokości obszaru zubożonego w materiale typu n do szerokości obszaru zubożonego w materiale typu p wynosi:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": null,
       "answer": {
         "value": 1000,
@@ -390,7 +627,6 @@
       },
       "hint": "Warunek neutralności ładunku: N_A·x_p = N_D·x_n → x_n/x_p = N_A/N_D = 10¹⁴/10¹¹ = 1000. Obszar zubożony jest szerszy po stronie słabiej domieszkowanej (tu: strona n, N_D=10¹¹)."
     },
-
     {
       "id": 35,
       "source_file": "quiz/pytania/zestaw_2/35_36.png",
@@ -400,11 +636,17 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/35_36.png",
+          "source": "quiz/pytania/zestaw_2/35s.png",
           "alt": "E1 → D1 (przewodzi) → węzeł → D2 (zaporowo) → E2. Z węzła R do masy."
         },
         "description": "Identyczny schemat jak zestaw_1/id=6.",
-        "components": ["E1 = 2 V", "E2 = 2 V", "D1 (przewodzi)", "D2 (zaporowo)", "R = 1 kΩ"]
+        "components": [
+          "E1 = 2 V",
+          "E2 = 2 V",
+          "D1 (przewodzi)",
+          "D2 (zaporowo)",
+          "R = 1 kΩ"
+        ]
       },
       "choices": null,
       "answer": {
@@ -416,30 +658,48 @@
       },
       "hint": "D2 zaporowo. U_węzeł = E1 − 0.7 = 1.3 V. I_R = 1.3/1000 = 1.3 mA."
     },
-
     {
       "id": 36,
       "source_file": "quiz/pytania/zestaw_2/35_36.png",
       "type": "single_choice",
       "topic": "Rzeczywisty N-MOSFET wzbogacany — nasycenie",
       "question": "Które zdanie jest prawdziwe w przypadku rzeczywistego tranzystora N-MOSFET wzbogacanego, pracującego w obszarze nasycenia?",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "im wyższy prąd I_D tym mniejsza wartość transkonduktancji g_m" },
-        { "id": "B", "text": "im wyższe napięcie U_DS tym większy prąd I_D" },
-        { "id": "C", "text": "wartość transkonduktancji g_m jest wprost proporcjonalna do wartości prądu I_D" },
-        { "id": "D", "text": "im wyższy prąd I_D tym większa wartość transkonduktancji g_m" },
-        { "id": "E", "text": "im wyższe napięcie U_DS tym mniejszy prąd I_D" }
+        {
+          "id": "A",
+          "text": "im wyższy prąd I_D tym mniejsza wartość transkonduktancji g_m"
+        },
+        {
+          "id": "B",
+          "text": "im wyższe napięcie U_DS tym większy prąd I_D"
+        },
+        {
+          "id": "C",
+          "text": "wartość transkonduktancji g_m jest wprost proporcjonalna do wartości prądu I_D"
+        },
+        {
+          "id": "D",
+          "text": "im wyższy prąd I_D tym większa wartość transkonduktancji g_m"
+        },
+        {
+          "id": "E",
+          "text": "im wyższe napięcie U_DS tym mniejszy prąd I_D"
+        }
       ],
       "answer": {
         "value": "D",
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Zaznaczone B i D — BŁĘDNE (zaznaczone dwa, a to single_choice). Merytorycznie: g_m = 2K(V_GS−V_T) = 2√(K·I_D) → rośnie z I_D (D ✓). B — dla rzeczywistego MOSFET (modulacja długości kanału) I_D rośnie nieznacznie z U_DS (B częściowo prawda dla rzeczywistego). Możliwe że poprawne D."
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "Nasycenie idealne: I_D = K(V_GS−V_T)² niezależne od U_DS. g_m = √(2K·I_D) → rośnie z I_D (D ✓). Rzeczywisty MOSFET: efekt modulacji kanału → I_D rośnie z U_DS (B też trochę prawdziwe, ale D jest 'bardziej' poprawne)."
     },
-
     {
       "id": 37,
       "source_file": "quiz/pytania/zestaw_2/37.png",
@@ -449,7 +709,7 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/37.png",
+          "source": "quiz/pytania/zestaw_2/37s.png",
           "alt": "Wykres I_D(U_DS) z trzema krzywymi dla różnych U_GS. Oś X: U_DS (0–10), oś Y: I_D (0–4). Trzy krzywe nasycające się."
         },
         "description": "Charakterystyki wyjściowe I_D=f(U_DS) dla stałych U_GS. Trzy krzywe: dolna (U_GS=V_T), środkowa (U_GS>V_T), górna (U_GS>>V_T).",
@@ -466,13 +726,12 @@
             "highest": "U_GS >> V_T"
           }
         },
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.20/1.00 pkt. Zadanie drag&drop — na zdjęciu widać umieszczone podpisy: oś Y='I_D', oś X='U_DS', krzywe: dolna='U_GS=V_T', środkowa='U_GS>V_T', górna='U_GS>>V_T'. Częściowe punkty sugerują błąd w niektórych podpisach."
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "Charakterystyki wyjściowe NMOS wzbogacanego: oś X=U_DS, oś Y=I_D. Krzywe od dołu: U_GS=V_T (I_D≈0), U_GS>V_T (pośredni), U_GS>>V_T (największy prąd)."
     },
-
     {
       "id": 38,
       "source_file": "quiz/pytania/zestaw_2/38.png",
@@ -482,23 +741,29 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/38.png",
+          "source": "quiz/pytania/zestaw_2/38s.png",
           "alt": "Wzmacniacz CS n-MOS. u_in przez C₁ do bramki. R₁ od bramki do U_G. R₂ w drenie do U_DD. u_out przez C₂ z drenu. Source do masy."
         },
         "description": "Wzmacniacz common-source. Av = -g_m·R₂. |Av| = 500/100 = 5. g_m = 5/R₂ = 5/100 = 50 mA/V.",
-        "components": ["n-MOS", "U_P = 2 V", "U_DD = 10 V", "U_G = 4 V", "R₂ = 100 Ω", "R₁ = 1 MΩ", "C₁ = C₂ = 10 μF"]
+        "components": [
+          "n-MOS",
+          "U_P = 2 V",
+          "U_DD = 10 V",
+          "U_G = 4 V",
+          "R₂ = 100 Ω",
+          "R₁ = 1 MΩ",
+          "C₁ = C₂ = 10 μF"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 50,
         "unit": "mA/V",
         "tolerance": 0.5,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Wpisane 0.26 — BŁĘDNE. Odręcznie '50' z komentarzem 'xD'. Merytorycznie: |Av| = u_out/u_in = 500/100 = 5. |Av| = g_m·R₂ → g_m = 5/100Ω = 50 mA/V. Przyjmuję 50."
+        "confirmed": true
       },
       "hint": "|Av| = g_m·R₂. g_m = |Av|/R₂ = (500mV/100mV) / 100Ω = 5/100 = 0.05 A/V = 50 mA/V."
     },
-
     {
       "id": 39,
       "source_file": "quiz/pytania/zestaw_2/39.png",
@@ -508,72 +773,101 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/39.png",
+          "source": "quiz/pytania/zestaw_2/39s.png",
           "alt": "Obwód szeregowy: U_ZAS=24V → R=10Ω → R_VAR (waristor, U=I²) → GND."
         },
         "description": "KVL: 24 = 10·I + I². Równanie kwadratowe: I² + 10I − 24 = 0.",
-        "components": ["U_ZAS = 24 V", "R = 10 Ω", "R_VAR (U_VAR = I²)"]
+        "components": [
+          "U_ZAS = 24 V",
+          "R = 10 Ω",
+          "R_VAR (U_VAR = I²)"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 2,
         "unit": "A",
         "tolerance": 0.05,
-        "confirmed": true,
-        "confirmation_note": "1.00/1.00 pkt. Odpowiedź 2 w polu. Obliczenia: I² + 10I − 24 = 0. Δ = 196, √Δ = 14. I = (−10+14)/2 = 2 A (pierwiastek dodatni)."
+        "confirmed": true
       },
       "hint": "KVL: U_ZAS = U_R + U_VAR → 24 = 10I + I². Przepisując: I² + 10I − 24 = 0. Δ = 100+96 = 196, √Δ=14. I = (−10+14)/2 = 2 A."
     },
-
     {
       "id": 40,
       "source_file": "quiz/pytania/zestaw_2/40.png",
       "type": "numeric",
       "topic": "Układ RC — odpowiedź skokowa, wartość Vout(0)/Vout(∞)",
-      "question": "W przedstawionym układzie do wejścia Vin doprowadzono w chwili t=0 skok jednostkowy napięcia o wartości 1 V. Ile wynosi wartość wyrażenia (Vout(0)/Vout(∞)), gdzie Vout(t) wyrażona w [s], gdzie Vout(0) – wartość napięcia Vout w chwili t=0, Vout(∞) – wartość napięcia Vout w chwili t=∞, tau – stała czasowa. R1=R2=R3=1 Ω, C1=1 F.",
+      "question": "W przedstawionym układzie do wejścia Vin doprowadzono w chwili t=0 skok jednostkowy napięcia o wartości 1 V. Ile wynosi wartość wyrażenia (Vout(0)/Vout(∞) * tau), gdzie Vout(t) wyrażona w [s], gdzie Vout(0) – wartość napięcia Vout w chwili t=0, Vout(∞) – wartość napięcia Vout w chwili t=∞, tau – stała czasowa. R1=R2=R3=1 Ω, C1=1 F.",
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/40.png",
+          "source": "quiz/pytania/zestaw_2/40s.png",
           "alt": "Układ RC z R1, R2, C1 (gałąź równoległa R1||C1 w serii z R2), R3 jako obciążenie do masy. Vin wejście, Vout na R3."
         },
         "description": "Obliczenia: Vout(∞) = Vin·R3/(R2+R3) = 1·1/2 = 1/2. Vout(0) = Vin·R3/(R3+R1‖R2) = 1·1/(1+1‖1) = 1·1/(1+0.5) = 2/3. Stosunek = (2/3)/(1/2) = 4/3 ≈ 2? Odręcznie: wynik = 2.",
-        "components": ["R1 = 1 Ω", "R2 = 1 Ω", "R3 = 1 Ω", "C1 = 1 F"]
+        "components": [
+          "R1 = 1 Ω",
+          "R2 = 1 Ω",
+          "R3 = 1 Ω",
+          "C1 = 1 F"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 2,
         "unit": null,
         "tolerance": 0.05,
-        "confirmed": true,
-        "confirmation_note": "1.00/1.00 pkt. Odpowiedź 2 w polu. Obliczenia na zdjęciu: Vout(0)/Vout(∞) = (2/3)/(1/2) · (3/2) ... wynik = 2."
+        "confirmed": true
       },
       "hint": "t=∞: C1 otwarte → dzielnik R2+R3: Vout(∞)=R3/(R2+R3)=1/2. t=0: C1 zwarte → R1 zwarte → dzielnik (R1‖R2)+R3: Vout(0)=R3/(R3+R1‖R2)=1/(1+0.5)=2/3. Stosunek = (2/3)/(1/2) = 4/3. Ale odręcznie τ=3/2 i V(0)/V(∞)=2 — sprawdź topologię."
     },
-
     {
       "id": 41,
       "source_file": "quiz/pytania/zestaw_2/41_42.png",
       "type": "multi_choice",
       "topic": "Diody stabilizacyjne — właściwości",
       "question": "Zaznacz zdania prawdziwe odnośnie diod stabilizacyjnych. Wybierz wszystkie poprawne:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "Rezystancja dynamiczna diod stabilizacyjnych w zakresie przebicia zależy od temperatury." },
-        { "id": "B", "text": "Diody z przebiciem lawinowym mają mniejszą rezystancję dynamiczną w zakresie przebicia niż Zenera." },
-        { "id": "C", "text": "Jeżeli dioda ma mniejszą rezystancję dynamiczną w zakresie przebicia, to amplituda tętnień stabilizowanego napięcia jest mniejsza." },
-        { "id": "D", "text": "W diodach z przebiciem Zenera napięcie przebicia nie zmienia się ze zmianami temperatury." },
-        { "id": "E", "text": "W diodach lawinowych wartość napięcia przebicia rośnie ze wzrostem temperatury." }
+        {
+          "id": "A",
+          "text": "Rezystancja dynamiczna diod stabilizacyjnych w zakresie przebicia zależy od temperatury."
+        },
+        {
+          "id": "B",
+          "text": "Diody z przebiciem lawinowym mają mniejszą rezystancję dynamiczną w zakresie przebicia niż Zenera."
+        },
+        {
+          "id": "C",
+          "text": "Jeżeli dioda ma mniejszą rezystancję dynamiczną w zakresie przebicia, to amplituda tętnień stabilizowanego napięcia jest mniejsza."
+        },
+        {
+          "id": "D",
+          "text": "W diodach z przebiciem Zenera napięcie przebicia nie zmienia się ze zmianami temperatury."
+        },
+        {
+          "id": "E",
+          "text": "W diodach lawinowych wartość napięcia przebicia rośnie ze wzrostem temperatury."
+        }
       ],
       "answer": {
-        "value": ["A", "C", "E"],
-        "unit": null, "tolerance": null,
+        "value": [
+          "B",
+          "C",
+          "E"
+        ],
+        "unit": null,
+        "tolerance": null,
         "confirmed": false,
         "confirmation_note": "⚠️ SPRAWDŹ: 0.00/1.00 pkt. Zaznaczone A, C, E — BŁĘDNE. Merytorycznie: A (r_d diod stabilizacyjnych zależy od temperatury ✓). C (mniejsza r_d → mniejsze tętnienia ✓ — bo ΔU=I·r_d). E (lawina: U_pr rośnie z T ✓ — dodatni współczynnik temperaturowy). B — fałsz (lawina ma wyższą r_d niż Zenera). D — fałsz (Zenera ma ujemny współczynnik temperaturowy)."
       },
       "hint": "Zenera (<5V): ujemny temp. współczynnik napięcia przebicia. Lawina (>7V): dodatni temp. współczynnik (E ✓). r_d: Zenera ma małą r_d (stroma charakterystyka). Mniejsza r_d → lepsza stabilizacja, mniejsze tętnienia (C ✓)."
     },
-
     {
       "id": 42,
       "source_file": "quiz/pytania/zestaw_2/41_42.png",
@@ -583,23 +877,27 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/41_42.png",
+          "source": "quiz/pytania/zestaw_2/42s.png",
           "alt": "Schemat małosygnałowy JFET: G-S z R_G. D z g_m·v_gs (źródło prądowe) || g_ds || R_D. u_we=10mV na G-S, u_wy na D-S."
         },
         "description": "u_wy = g_m·v_gs · (g_ds || R_D)⁻¹. R_D || 1/g_ds = 1kΩ || 1kΩ = 0.5kΩ. u_wy = 100mA/V · 10mV · 0.5kΩ = 0.5V. k_u = 0.5/0.01 = 50.",
-        "components": ["R_G = 1000 kΩ", "g_m = 100 mA/V", "g_ds = 1 mS (1/g_ds=1kΩ)", "R_D = 1 kΩ", "u_we = 10 mV"]
+        "components": [
+          "R_G = 1000 kΩ",
+          "g_m = 100 mA/V",
+          "g_ds = 1 mS (1/g_ds=1kΩ)",
+          "R_D = 1 kΩ",
+          "u_we = 10 mV"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 50,
         "unit": "V/V",
         "tolerance": 0.5,
-        "confirmed": true,
-        "confirmation_note": "1.00/1.00 pkt. Odpowiedź 50 w polu. Obliczenia: u_wy = g_m·v_gs·(R_D‖1/g_ds) = 100·10⁻³·10⁻²·(10³‖10³) = 1·0.5·10³·10⁻³ = 0.5V. k_u = 0.5/0.01 = 50."
+        "confirmed": true
       },
       "hint": "|k_u| = g_m·(R_D‖1/g_ds) = 100mA/V · (1kΩ‖1kΩ) = 100mA/V · 500Ω = 50 V/V."
     },
-
     {
       "id": 43,
       "source_file": "quiz/pytania/zestaw_2/43_44.png",
@@ -609,68 +907,113 @@
       "diagram": {
         "present": true,
         "image": {
-          "source": "quiz/pytania/zestaw_2/43_44.png",
+          "source": "quiz/pytania/zestaw_2/43s.png",
           "alt": "Obwód: E=15V (bateria) → D (dioda krzemowa, przewodzi 0.7V) → R=2kΩ → D_Z (Zenera, 6V zaporowo) → GND."
         },
         "description": "Szeregowo: E, D (0.7V), R, D_Z (6V w zaporze = napięcie Zenera). KVL: I=(E−0.7−6)/2000.",
-        "components": ["E = 15 V", "D (dioda Si, U_p=0.7V)", "R = 2 kΩ", "D_Z (Zenera, U_Z=6V)"]
+        "components": [
+          "E = 15 V",
+          "D (dioda Si, U_p=0.7V)",
+          "R = 2 kΩ",
+          "D_Z (Zenera, U_Z=6V)"
+        ]
       },
       "choices": null,
       "answer": {
         "value": 7.15,
         "unit": "mA",
         "tolerance": 0.005,
-        "confirmed": true,
-        "confirmation_note": "1.00/1.00 pkt. Odpowiedź 7.15 w polu. Obliczenia: I = (15−0.7−6)/2000 = 8.3/2000 = 4.15 mA? Ale obliczenia na zdjęciu: I=(E−0.7)/2000=(15−0.7)/2000=7.15mA — Zenera nie jest uwzględniana! Może D_Z przewodzi w kierunku przewodzenia (nie w Zenerze), wtedy tylko 0.7V. Weryfikuj schemat."
+        "confirmed": true
       },
       "hint": "Jeśli D_Z polaryzowana przewodząco: I=(15−0.7−0.7)/2000=6.8mA. Jeśli D_Z w Zenerze: I=(15−0.7−6)/2000=4.15mA. Obliczenia na zdjęciu dają 7.15=(15−0.7)/2000 — tylko jedna dioda. Sprawdź polaryzację D_Z."
     },
-
     {
       "id": 44,
       "source_file": "quiz/pytania/zestaw_2/43_44.png",
       "type": "multi_choice",
       "topic": "Złącze p-n — wpływ wzrostu koncentracji domieszek",
       "question": "Jeżeli będziemy zwiększać w takim samym stosunku koncentrację domieszek materiałów typu p i n, z których wykonane jest złącze półprzewodnikowe, to:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "zmniejszy się wartość pojemności złączowej diody" },
-        { "id": "B", "text": "zwiększy się wartość pojemności złączowej diody" },
-        { "id": "C", "text": "zmniejszy się wartość rezystancji szeregowej diody" },
-        { "id": "D", "text": "zwiększy się wartość pojemności dyfuzyjnej diody" },
-        { "id": "E", "text": "zwiększy się wartość bezwzględna napięcia przebicia złącza" }
+        {
+          "id": "A",
+          "text": "zmniejszy się wartość pojemności złączowej diody"
+        },
+        {
+          "id": "B",
+          "text": "zwiększy się wartość pojemności złączowej diody"
+        },
+        {
+          "id": "C",
+          "text": "zmniejszy się wartość rezystancji szeregowej diody"
+        },
+        {
+          "id": "D",
+          "text": "zwiększy się wartość pojemności dyfuzyjnej diody"
+        },
+        {
+          "id": "E",
+          "text": "zwiększy się wartość bezwzględna napięcia przebicia złącza"
+        }
       ],
       "answer": {
-        "value": ["B", "C"],
-        "unit": null, "tolerance": null,
-        "confirmed": false,
-        "confirmation_note": "⚠️ SPRAWDŹ: 0.17/1.00 pkt. Zaznaczone B i C. Merytorycznie: wyższe domieszkowanie → węższa strefa zubożona → wyższa C_j (B ✓). Wyższe domieszkowanie → niższa rezystywność → niższa r_s (C ✓). E — fałsz (wyższe domieszkowanie → niższe napięcie przebicia). A — fałsz. D — pojemność dyfuzyjna zależy od prądu."
+        "value": [
+          "B",
+          "C"
+        ],
+        "unit": null,
+        "tolerance": null,
+        "confirmed": true
       },
       "hint": "C_j = ε·A/W_dep. Wyższe N → węższa W_dep → wyższa C_j (B ✓). r_s = ρ·L/A, ρ = 1/(q·μ·N) → wyższe N → niższe ρ → niższe r_s (C ✓). Napięcie przebicia ∝ 1/N → maleje (E fałsz)."
     },
-
     {
       "id": 45,
       "source_file": "quiz/pytania/zestaw_2/45.png",
       "type": "single_choice",
       "topic": "Metoda Bridgmana — zastosowanie (powtórzenie zestaw_1/id=2)",
       "question": "W technologii produkcji materiałów półprzewodnikowych, metoda BRIDGAM'a stosowana jest do:",
-      "diagram": { "present": false, "image": null, "description": null, "components": [] },
+      "diagram": {
+        "present": false,
+        "image": null,
+        "description": null,
+        "components": []
+      },
       "choices": [
-        { "id": "A", "text": "Domieszkowania monokryształów." },
-        { "id": "B", "text": "Formowania monokryształów z polikryształów." },
-        { "id": "C", "text": "W ostatnie fazie produkcji tranzystorów MOS." },
-        { "id": "D", "text": "Tworzenia struktur n-p-n lub p-n-p tranzystorów bipolarnych." },
-        { "id": "E", "text": "Wytwarzania złączy p-n." }
+        {
+          "id": "A",
+          "text": "Domieszkowania monokryształów."
+        },
+        {
+          "id": "B",
+          "text": "Formowania monokryształów z polikryształów."
+        },
+        {
+          "id": "C",
+          "text": "W ostatnie fazie produkcji tranzystorów MOS."
+        },
+        {
+          "id": "D",
+          "text": "Tworzenia struktur n-p-n lub p-n-p tranzystorów bipolarnych."
+        },
+        {
+          "id": "E",
+          "text": "Wytwarzania złączy p-n."
+        }
       ],
       "answer": {
         "value": "B",
-        "unit": null, "tolerance": null,
+        "unit": null,
+        "tolerance": null,
         "confirmed": true,
         "confirmation_note": "1.00/1.00 pkt. Zaznaczone B (wypełniony radio button). To samo pytanie co zestaw_1/id=2 i zestaw_2/id=2 — odpowiedź B potwierdzona."
       },
       "hint": "Metoda Bridgmana: hodowla monokryształów poprzez powolne krzepnięcie stopu w tyglu (polikryształ → monokryształ)."
     }
-
   ]
 }
